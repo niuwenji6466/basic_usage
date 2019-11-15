@@ -12,8 +12,9 @@ yarn global add @vue/cli
 vue --version
 ```
 
-* 查看vue.js   [https://cn.vuejs.org/](https://cn.vuejs.org/)  
+* 查看vue.js   [https://cn.vuejs.org/](https://cn.vuejs.org/)
 
-* 
+* Vue
+
 
 
