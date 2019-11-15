@@ -5,5 +5,5 @@
 * [PART III - MySql](part-iii-qian-duan-kai-fa-bi-ji.md)
 * [PART IV - SpringBoot](part-iii-springboot.md)
 * [PART V - VUE](part-v-vue.md)
-  * 1.1 VUE安装
+  * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
 
