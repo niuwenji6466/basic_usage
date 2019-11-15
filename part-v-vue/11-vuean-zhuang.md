@@ -24,6 +24,7 @@ vue --version
      npm update -g
 ```
 
-* 
+* 老版本的vue-cli 还有可能报其他错误，需要更新
+
 
 
