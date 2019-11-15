@@ -14,5 +14,9 @@ vue --version
 
 * 查看vue.js
 
-        [https://cn.vuejs.org/](https://cn.vuejs.org/ "渐进式Javascript开发框架")
+  ```
+    [https://cn.vuejs.org/](https://cn.vuejs.org/ "渐进式Javascript开发框架")
+  ```
+
+
 
