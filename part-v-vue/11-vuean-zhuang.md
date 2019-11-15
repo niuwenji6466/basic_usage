@@ -1,4 +1,4 @@
-* [/werwe](/werwe "ssss")安装vue-cli
+* 安装vue-cli
 
 ```Linux
 npm install -g @vue/cli
