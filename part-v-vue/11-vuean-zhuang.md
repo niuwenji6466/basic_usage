@@ -1,4 +1,4 @@
-* 安装vue-cli
+* [/werwe](/werwe "ssss")安装vue-cli
 
 ```Linux
 npm install -g @vue/cli
@@ -12,7 +12,7 @@ yarn global add @vue/cli
 vue --version
 ```
 
-* 查看vue.js   https://cn.vuejs.org/
+* 查看vue.js   [https://cn.vuejs.org/](https://cn.vuejs.org/)
 
 
 
