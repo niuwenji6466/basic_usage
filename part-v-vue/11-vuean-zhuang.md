@@ -32,5 +32,5 @@ npm update vue-cli
 
 * vue -V 查看vue版本,查看vue-cli 版本 vue -v
 
-
+        vue -V , vue -h \[查看帮助\]
 
