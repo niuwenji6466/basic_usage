@@ -12,5 +12,4 @@ yarn global add @vue/cli
 vue --version
 ```
 
-
-
+* 
