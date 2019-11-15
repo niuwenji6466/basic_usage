@@ -30,4 +30,7 @@ vue --version
 npm update vue-cli
 ```
 
-* 
+* vue -V 查看vue版本,查看vue-cli 版本 vue -v
+
+
+
