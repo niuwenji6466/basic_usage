@@ -6,6 +6,7 @@ npm install -g @vue/cli
 yarn global add @vue/cli
 ```
 
-* 
+* 查看是否安装成功
+
 
 
