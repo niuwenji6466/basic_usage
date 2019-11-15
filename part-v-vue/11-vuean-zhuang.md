@@ -18,6 +18,7 @@ vue --version
 
 * View UI 组件库 [https://www.iviewui.com/](https://www.iviewui.com/ )
 
-* 
+* 有的时候由于npm不是最新版本，老版本就会出现错误，解决办法
+
 
 
