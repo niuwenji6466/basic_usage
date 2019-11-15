@@ -14,7 +14,7 @@ vue --version
 
 * 查看vue.js   [https://cn.vuejs.org/](https://cn.vuejs.org/)
 
-* Vue
+* Vue.js 开发标准工具 [https://cli.vuejs.org/zh/](https://cli.vuejs.org/zh/ "开发标准工具")
 
 
 
