@@ -118,5 +118,20 @@ CONVERT 是一个函数，用于转换数据的字符集编码；这里是中文
 
 ### 空值排序 {#-3}
 
+* MySQL 和 SQL Server 认为空值最小，升序时空值排在最前，降序时空值排在最后
+
+* Oracle 和 PostgreSQL 认为空值最大，升序时空值排在最后，降序时空值排在最前
+
+同时支持使用 NULLS FIRST 和 NULLS LAST 指定空值的顺序
+
+解决空值的排序问题还有一个更通用的方法，就是利用 COALESCE 函数将空值转换为一个指定的值。例如，将奖金为空的数据转换为 0，这样升序排序时一定在最前：
+
+```sql
+SELECT emp_name, COALESCE(bonus, 0) AS bonus
+  FROM employee
+ WHERE dept_id = 2
+ ORDER BY COALESCE(bonus, 0);
+```
+
 
 
