@@ -80,7 +80,7 @@ FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIE
 
 * ONLY 和 WITH TIES 的差别在于，如果在最后有多个排名相同的数据行，WITH TIES 会返回更多的数据；默认为 ONLY
 
-#### 使用 LIMIT 实现分页查询 {#limit}
+#### 使用 LIMIT 实现分页查询： {#limit}
 
 
 
