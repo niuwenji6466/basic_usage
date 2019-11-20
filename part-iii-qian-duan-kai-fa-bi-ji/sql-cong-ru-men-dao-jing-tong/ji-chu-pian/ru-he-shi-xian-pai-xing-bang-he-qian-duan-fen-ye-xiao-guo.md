@@ -23,3 +23,13 @@ OFFSET 0 ROWS
 
 MySQL 和 PostgreSQL 支持使用 LIMIT 替代 FETCH 实现相同的功能
 
+```sql
+-- MySQL 以及 PostgreSQL 实现
+SELECT emp_name, salary
+  FROM employee
+ ORDER BY salary DESC
+ LIMIT 5 OFFSET 0;
+```
+
+
+
