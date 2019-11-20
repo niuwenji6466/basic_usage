@@ -35,7 +35,7 @@ SELECT emp_name, salary
 
 ### 分页查询
 
-使用标准 SQL 实现分页查询：
+**使用标准 SQL 实现分页查询：**
 
 假设前端页面每次显示 5 条记录；当用户点击按钮显示第 3 页的数据，也就是第 11 条到第 15 条记录时，使用 FETCH 子句实现如下：
 
@@ -79,6 +79,8 @@ FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIE
 * num\_rows 表示按照行数计算返回的数据量，N PERCENT 表示按照百分比计算返回的数据量，ROW 和 ROWS 作用相同
 
 * ONLY 和 WITH TIES 的差别在于，如果在最后有多个排名相同的数据行，WITH TIES 会返回更多的数据；默认为 ONLY
+
+####  {#limit}
 
 
 
