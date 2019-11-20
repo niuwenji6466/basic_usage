@@ -21,3 +21,5 @@ OFFSET 0 ROWS
 
 使用 LIMIT 实现 Top-N 排行榜：
 
+MySQL 和 PostgreSQL 支持使用 LIMIT 替代 FETCH 实现相同的功能
+
