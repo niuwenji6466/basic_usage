@@ -260,5 +260,7 @@ export default {
 
 3. 在需要接收数据的组件中用bus.$on监听自定义事件，并在回调函数中处理传递过来的参数
 
+## 三, vue高级组件之provide/inject
+
 
 
