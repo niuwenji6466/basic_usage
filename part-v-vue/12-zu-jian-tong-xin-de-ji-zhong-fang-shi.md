@@ -232,7 +232,25 @@ export default {
 
 * 在父组件中，注册这两个组件，并添加这两个组件的标签
 
-
+```js
+<template>
+    <div id="app">
+         <firstChild></firstChild>
+         <secondChild></secondChild>
+    </div>
+</template>
+<script>
+    import firstChild from "../components/firstChild";
+    import secondChild from "../components/secondChild";
+    export default {
+        name:'app',
+        components:{
+            firstChild,
+            secondChild
+        }
+    }
+</script>
+```
 
 
 
