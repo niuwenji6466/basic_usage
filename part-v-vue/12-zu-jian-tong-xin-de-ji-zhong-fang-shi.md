@@ -228,6 +228,11 @@ export default {
 </style>
 ```
 
-* 
+我们在mounted中，监听了userDefinedEvent,并把传递过来的字符串参数传递给了$on监听器的回调函数PS:mounted:是一个Vue生命周期中的钩子函数，简单点说就类似于jquery的ready，Vue会在文档加载完毕后调用mounted函数。$on:监听当前实例上的自定义事件\(此处当前实例为bus\)。事件可以由$emit触发，回调函数会接收所有传入事件触发函数\($emit\)的额外参数。
+
+* 在父组件中，注册这两个组件，并添加这两个组件的标签
+
+
+
 
 
