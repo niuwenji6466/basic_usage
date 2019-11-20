@@ -90,5 +90,15 @@ SELECT emp_name, salary, hire_date
 
 ### 中文排序 {#-2}
 
+首先是 Oracle，使用 AL32UTF8 字符编码时不支持中文排序规则，可以通过一个转换函数实现该功能。以下示例按照员工姓名的拼音进行排序：
+
+```sql
+-- Oracle 实现中文拼音排序
+SELECT emp_name
+  FROM employee
+ WHERE dept_id = 4
+ ORDER BY NLSSORT(emp_name,'NLS_SORT = SCHINESE_PINYIN_M');
+```
+
 
 
