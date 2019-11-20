@@ -267,7 +267,6 @@ export default {
 provide / inject 是 2.2 新增的方法，可以以一个祖先组件向所有子孙后代注入依赖（一个内容）。provider/inject：简单的来说就是在父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量。以上两者可以在父组件与子组件、孙子组件、曾孙子...组件数据交互，也就是说不仅限于prop的父子组件数据交互，只要在上一层级的声明的provide，那么下一层级无论多深都能够通过inject来访问到provide的数据
 
 1. 父级组件如下
-2. 孙子组件，注意这里是孙子组件，父级 -&gt; 子组件 -&gt; 孙子组件三个层级关系
 
 ```js
 <template>
@@ -281,6 +280,23 @@ export default {
     provide: {
      name: 'Garrett'
     }
+}
+</script>
+```
+
+2.孙子组件，注意这里是孙子组件，父级 -&gt; 子组件 -&gt; 孙子组件三个层级关系
+
+```js
+<template>
+<div>
+{{name}}
+</div>
+</template>
+
+<script>
+export default {
+name: 'Grandson',
+inject: [name]
 }
 </script>
 ```
