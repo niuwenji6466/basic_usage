@@ -1,4 +1,4 @@
-# VUE安装
+#  VUE安装
 
 * 安装vue-cli
 
