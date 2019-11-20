@@ -76,6 +76,9 @@ FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIE
 
 * OFFSET 表示偏移量，即从第 M+1 行开始返回；如果不指定，表示从第 1 行开始返回；ROW 和 ROWS 作用相同
 * FETCH 指定返回多少行，FIRST 和 NEXT 作用相同
+* num\_rows 表示按照行数计算返回的数据量，N PERCENT 表示按照百分比计算返回的数据量，ROW 和 ROWS 作用相同
+
+* ONLY 和 WITH TIES 的差别在于，如果在最后有多个排名相同的数据行，WITH TIES 会返回更多的数据；默认为 ONLY
 
 
 
