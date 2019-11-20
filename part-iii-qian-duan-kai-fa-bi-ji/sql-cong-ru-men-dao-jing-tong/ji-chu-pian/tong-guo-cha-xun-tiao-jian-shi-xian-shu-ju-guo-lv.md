@@ -104,3 +104,5 @@ NLSSORT 是一个函数，返回了按照某种排序规则得到的字符序列
 
 Oracle 还支持按偏旁部首进行排序：SCHINESERADICALM，以及按笔画进行排序：SCHINESESTROKEM。
 
+MySQL 的中文排序。MySQL 8.0 默认使用 utf8mb4 字符编码，不支持中文排序规则。以下语句按照员工姓名的拼音进行排序：
+
