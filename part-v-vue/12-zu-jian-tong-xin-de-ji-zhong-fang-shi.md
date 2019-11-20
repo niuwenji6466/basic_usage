@@ -301,5 +301,5 @@ inject: [name]
 </script>
 ```
 
-
+   这里可以通过inject直接访问其两个层级上的数据，其用法与props完全相同，同样可以参数校验等过去用的 event-bus 虽然可以解决深层问题，但是会导致整个 event-emit 组成过于混乱，难以维护。使用 provide / inject 可以保证父子单向数据流的清晰性。在 React 中 Context 的 Provider / Consumer 也有相同的效果，由于还没有具体使用过，对 React 本身也只有一面之缘，留待以后在了解，感兴趣的同学可以 阅读文档 了解。 当然它的作用还有很多，比如vue 路由参数变化，页面不刷新，provide /inject 完美解决方案
 
