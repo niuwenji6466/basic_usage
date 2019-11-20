@@ -92,5 +92,5 @@ SELECT emp_name, salary
  LIMIT 5 OFFSET 10;
 ```
 
-
+其中，ORDER BY 按照月薪从高到低进行排序；OFFSET 跳过 10 行；然后 LIMIT返回随后的 5 条数据。该语句返回的结果与上一小节中的 FETCH 示例相同
 
