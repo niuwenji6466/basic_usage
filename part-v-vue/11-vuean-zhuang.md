@@ -64,35 +64,27 @@ npm update vue-cli
 
    控制台（cmd）输入如下：
 
-* ?project name \[键盘输入项目名\]
+3. ?project name \[键盘输入项目名\]
 
-* ?project description \[键盘输入项目描述\]
+4. ?project description \[键盘输入项目描述\]
 
-* ?Author \[键盘输入作者\]
+5. ?Author \[键盘输入作者\]
 
-* ?Vue build \[\]
+6. ?Vue build \[\]
 
-* ?Install vue-router? Yes
+7. ?Install vue-router? Yes
 
-* ?Use ESLint to lint your code ? No
+8. ?Use ESLint to lint your code ? No
 
-* ?Set up unit tests ? No
+9. ?Set up unit tests ? No
 
-* ?Setup e2e tests with Nightwatch? No
+10. ?Setup e2e tests with Nightwatch? No
 
-* ?Should we run npm 'npm install ' for you after the project has been create ? npm
+11. ?Should we run npm 'npm install ' for you after the project has been create ? npm
 
-   3.现在已经创建好了，那就让项目先安装下依赖再运行一下，会出现下面的页面，操作指令是：
-
-cnpm install , cnpm run dev 注意 这里要在sell下进行安装和运行
-
-  4.现在已经创建好了，那就让项目先安装下依赖再运行一下，会出现下面的页面，操作指令是：
+    3.现在已经创建好了，那就让项目先安装下依赖再运行一下，会出现下面的页面，操作指令是：
 
 cnpm install , cnpm run dev 注意 这里要在sell下进行安装和运行
 
-
-
-
-
-
+4.利用vue-cil初始化构建vue项目，我们会获得一个初始化的文件夹结构
 
