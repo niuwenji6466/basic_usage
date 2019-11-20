@@ -392,5 +392,12 @@ getters.js示例（我们一般使用getters来获取state的状态，而不是�
         return `My name is ${state.name}, I am ${state.age}.`;
     }
 
+mutation-type.js示例（我们会将所有mutations的函数名放在这个文件里）：
 
+```
+export const SET_NAME = 'SET_NAME';
+export const SET_AGE = 'SET_AGE';
+```
+
+mutations.js示例：
 
