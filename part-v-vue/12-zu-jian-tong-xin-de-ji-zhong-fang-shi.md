@@ -168,7 +168,9 @@ import Vue from 'Vue'
 export default new Vue ;
 ```
 
-       eventBus中我们只创建了一个新的Vue实例，以后它就承担起了组件之间通信的桥梁了，也就是中央事件总线
+```
+   eventBus中我们只创建了一个新的Vue实例，以后它就承担起了组件之间通信的桥梁了，也就是中央事件总线
+```
 
 * 创建一个firstChild组件，引入eventBus这个事件总线，接着添加一个按钮并绑定一个点击事件
 
@@ -193,9 +195,7 @@ export default {
 </style>
 ```
 
-  我们在响应点击事件的sendMsg函数中用$emit触发了一个自定义的userDefinedEvent事件，并传递了一个字符串参数,ps:$emit实例方法触发当前实例\(_这里的当前实例就是bus_\)上的事件,附加参数都会传给监听器回调。
-
-
+我们在响应点击事件的sendMsg函数中用$emit触发了一个自定义的userDefinedEvent事件，并传递了一个字符串参数,ps:$emit实例方法触发当前实例\(_这里的当前实例就是bus_\)上的事件,附加参数都会传给监听器回调。
 
 
 
