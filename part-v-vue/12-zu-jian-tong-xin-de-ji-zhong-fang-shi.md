@@ -81,5 +81,35 @@ export default {
 
 * 在子组件中创建一个按钮，给按钮绑定一个点击事件 , 在响应该点击事件的函数中使用$emit来触发一个自定义事件，并传递一个参数
 
+```js
+<template>
+    <div id="container">
+        <input type="text" v-model="msg">
+        <button v-on:click="sendMsgToParent">传递到父组件</button>
+    </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      msg: "传递给父组件的值"
+    };
+  },
+  props:{},
+  methods: {
+    sendMsgToParent:function() {
+      this.$emit("listenToChildEvent", this.msg);
+    }
+  }
+};
+</script>
+<style scoped>
+#container {
+  color: red;
+  margin-top: 50px;
+}
+</style>
+```
+
 
 
