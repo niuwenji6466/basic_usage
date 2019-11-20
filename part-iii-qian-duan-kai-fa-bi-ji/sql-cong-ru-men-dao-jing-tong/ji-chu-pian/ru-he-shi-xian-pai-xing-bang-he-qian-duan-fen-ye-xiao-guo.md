@@ -82,7 +82,15 @@ FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIE
 
 #### 使用 LIMIT 实现分页查询： {#limit}
 
+使用 LIMIT 语法实现分页查询同样只需要修改 OFFSET 偏移量即可：
 
+```sql
+-- MySQL 以及 PostgreSQL 实现
+SELECT emp_name, salary
+  FROM employee
+ ORDER BY salary DESC
+ LIMIT 5 OFFSET 10;
+```
 
 
 
