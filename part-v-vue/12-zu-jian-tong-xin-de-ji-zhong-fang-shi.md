@@ -36,7 +36,6 @@ export default {
 * 在父组件中注册Child组件，并在template中加入child标签，标签中添加message属性并赋值
 
 ```js
-
 <template>
     <div id="container">
         <input type="text" v-model="text" @change="dataChange">
@@ -70,10 +69,6 @@ export default {
 
 * 总结：
 
-1. 子组件在props中创建一个属性，用以接收父组件传过来的值
-2. 父组件中注册子组件
-
-3. 
-* 
+1. 
 
 
