@@ -252,5 +252,5 @@ export default {
 </script>
 ```
 
-总结
+总结：
 
