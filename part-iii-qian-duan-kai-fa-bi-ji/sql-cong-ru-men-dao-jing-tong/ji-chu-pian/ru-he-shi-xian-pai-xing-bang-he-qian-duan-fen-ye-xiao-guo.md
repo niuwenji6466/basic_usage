@@ -103,5 +103,19 @@ SELECT TOP(5) emp_name, salary
  ORDER BY salary DESC;
 ```
 
+Oracle 11g 或者更早的版本无法使用 FETCH 语句， 但是可以使用子查询和 ROWNUM 函数实现相同的功能：
+
+```sql
+-- Oracle 实现
+SELECT emp_name, salary
+  FROM (SELECT emp_name, salary, rownum AS rn
+          FROM (SELECT emp_name, salary
+                  FROM employee
+                 ORDER BY salary DESC
+               )
+       )
+ WHERE rn >= 11 AND rn <= 15;
+```
+
 
 
