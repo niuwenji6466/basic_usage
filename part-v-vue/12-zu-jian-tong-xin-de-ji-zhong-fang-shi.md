@@ -352,7 +352,7 @@ vue-cli中使用vuex的方式
 
 一般来讲，我们都会采用vue-cli来进行实际的开发，在vue-cli中，开发和调用方式稍微不同
 
-```
+```js
 ├── index.html
 ├── main.js
 ├── components
@@ -370,7 +370,7 @@ vue-cli中使用vuex的方式
 
 state.js示例：
 
-```
+```js
 const state = {
     name: 'weish',
     age: 22
@@ -380,28 +380,30 @@ export default state;
 
 getters.js示例（我们一般使用getters来获取state的状态，而不是直接使用state）：
 
-    export const name = (state) => {
-        return state.name;
-    }
+```js
+export const name = (state) => {
+    return state.name;
+}
 
-    export const age = (state) => {
-        return state.age
-    }
+export const age = (state) => {
+    return state.age
+}
 
-    export const other = (state) => {
-        return `My name is ${state.name}, I am ${state.age}.`;
-    }
+export const other = (state) => {
+    return `My name is ${state.name}, I am ${state.age}.`;
+}
+```
 
 mutation-type.js示例（我们会将所有mutations的函数名放在这个文件里）：
 
-```
+```js
 export const SET_NAME = 'SET_NAME';
 export const SET_AGE = 'SET_AGE';
 ```
 
 mutations.js示例：
 
-```
+```js
 import * as types from './mutation-type.js';
 
 export default {
@@ -416,7 +418,7 @@ export default {
 
 actions.js示例（异步操作、多个commit时）：
 
-```
+```js
 import * as types from './mutation-type.js';
 
 export default {
@@ -429,7 +431,7 @@ export default {
 
 modules--m1.js示例（如果不是很复杂的应用，一般来讲是不会分模块的）：
 
-```
+```js
 export default {
     state: {},
     getters: {},
@@ -440,7 +442,7 @@ export default {
 
 index.js示例（组装vuex）：
 
-```
+```js
 import vue from 'vue';
 import vuex from 'vuex';
 import state from './state.js';
@@ -470,7 +472,7 @@ export default new vuex.Store({
 
 最后将store实例挂载到main.js里面的vue上去就行了
 
-```
+```js
 import store from './store/index.js';
 
 new Vue({
