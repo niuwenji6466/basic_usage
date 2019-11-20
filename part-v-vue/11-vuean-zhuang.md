@@ -42,5 +42,12 @@ npm update vue-cli
 
 * 备注：vsCode 有两个控制台cmd\powerShell
 
-# 
+# vue创建新项目\(npm安装-&gt;初始化项目\)
+
+## 第一步：npm安装
+
+1. 首先：先从nodejs.org中下载nodejs
+
+2. 
+
 
