@@ -268,5 +268,22 @@ provide / inject 是 2.2 新增的方法，可以以一个祖先组件向所有�
 
 1. 父级组件如下
 
+```js
+<template>
+<div class="test">
+<son prop="data"></son>
+</div>
+</template>
+<script>
+export default {
+    name: 'Test',
+    provide: {
+     name: 'Garrett'
+    }
+}
+</script>
+```
+
+1. 
 
 
