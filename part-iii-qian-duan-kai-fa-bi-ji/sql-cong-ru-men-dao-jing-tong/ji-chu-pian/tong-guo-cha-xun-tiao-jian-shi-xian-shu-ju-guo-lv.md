@@ -106,3 +106,13 @@ Oracle 还支持按偏旁部首进行排序：SCHINESERADICALM，以及按笔画
 
 MySQL 的中文排序。MySQL 8.0 默认使用 utf8mb4 字符编码，不支持中文排序规则。以下语句按照员工姓名的拼音进行排序：
 
+```sql
+-- MySQL 实现中文拼音排序
+SELECT emp_name
+  FROM employee
+ WHERE dept_id = 4
+ ORDER BY CONVERT(emp_name USING GBK);
+```
+
+
+
