@@ -262,5 +262,7 @@ export default {
 
 ## 三, vue高级组件之provide/inject
 
+### 1,provide/inject
+
 
 
