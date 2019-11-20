@@ -197,4 +197,37 @@ export default {
 
 我们在响应点击事件的sendMsg函数中用$emit触发了一个自定义的userDefinedEvent事件，并传递了一个字符串参数,ps:$emit实例方法触发当前实例\(_这里的当前实例就是bus_\)上的事件,附加参数都会传给监听器回调。
 
+* 我们再创建一个secondChild组件，引入eventBus事件总线，并用一个p标签来显示传递过来的值
+
+```js
+<template>
+    <div id="secondChild">
+         <h2>secondChild组件</h2>
+         <p>从firstChild组件中接受的字符串：{{msg}}</p>
+    </div>
+</template>
+<script>
+import bus from "../assets/eventBus";
+export default {
+  data(){
+      return {
+          msg:"默认值"
+      }
+  },
+  mounted: {
+      sendMsg:function(){
+          var self=this;
+          bus.$on("userDefinedEvent",function(msg){
+              self.msg=msg;
+          });
+      }
+  }
+};
+</script>
+<style scoped>
+</style>
+```
+
 * 
+
+
