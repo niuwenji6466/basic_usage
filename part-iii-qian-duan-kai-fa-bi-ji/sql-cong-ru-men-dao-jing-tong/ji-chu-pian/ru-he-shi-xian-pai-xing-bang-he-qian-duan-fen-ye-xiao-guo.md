@@ -96,5 +96,12 @@ SELECT emp_name, salary
 
 ### **其他实现方式:** {#-1}
 
+```sql
+-- SQL Server 实现
+SELECT TOP(5) emp_name, salary
+  FROM employee
+ ORDER BY salary DESC;
+```
+
 
 
