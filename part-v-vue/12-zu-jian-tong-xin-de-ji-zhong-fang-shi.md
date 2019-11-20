@@ -159,7 +159,7 @@ export default {
 
 ### 1， 利用总线方式可以平级组件进行通信
 
-  无论是父向子传值还是子向父传值，都需要一个中间介质。对于平级组件来说其实也一样，他们也需要一个中间介质来作为一个中央事件总线
+无论是父向子传值还是子向父传值，都需要一个中间介质。对于平级组件来说其实也一样，他们也需要一个中间介质来作为一个中央事件总线
 
 * 我们先来创建中央事件总线，在src/assets/下创建一个eventBus.js内容如下
 
@@ -168,6 +168,34 @@ import Vue from 'Vue'
 export default new Vue ;
 ```
 
-* 
+       eventBus中我们只创建了一个新的Vue实例，以后它就承担起了组件之间通信的桥梁了，也就是中央事件总线
+
+* 创建一个firstChild组件，引入eventBus这个事件总线，接着添加一个按钮并绑定一个点击事件
+
+```js
+<template>
+    <div id="firstChild">
+         <h2>firstChild组件</h2>
+        <button v-on:click="sendMsg"></button>
+    </div>
+</template>
+<script>
+import bus from "../assets/eventBus";
+export default {
+  methods: {
+      sendMsg:function(){
+          bus.$emit("userDefinedEvent","this messgae is from firstChild");
+      }
+  }
+};
+</script>
+<style scoped>
+</style>
+```
+
+  我们在响应点击事件的sendMsg函数中用$emit触发了一个自定义的userDefinedEvent事件，并传递了一个字符串参数,ps:$emit实例方法触发当前实例\(_这里的当前实例就是bus_\)上的事件,附加参数都会传给监听器回调。
+
+
+
 
 
