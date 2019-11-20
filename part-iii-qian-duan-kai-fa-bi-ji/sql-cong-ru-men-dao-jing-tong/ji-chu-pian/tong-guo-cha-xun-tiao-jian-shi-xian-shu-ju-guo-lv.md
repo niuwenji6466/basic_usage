@@ -68,14 +68,22 @@ TEST@shuguo.com           |
 SELECT col1, col2, ...
   FROM t
  ORDER BY col1 ASC, col2 DESC, ...;
- 
+
 #首先基于第一个字段进行排序；对于第一个字段排序相同的数据，再基于第二个字段进行排序；依此类推
 
 SELECT emp_name, salary, hire_date
   FROM employee
  WHERE dept_id = 4
  ORDER BY salary DESC, hire_date;
+```
 
+在指定排序字段时，除了使用字段名或者表达式之外，也可以使用这些字段在 SELECT 列表中出现的顺序表示。上面的示例可以改写如下：
+
+```sql
+SELECT emp_name, salary, hire_date
+  FROM employee
+ WHERE dept_id = 4
+ ORDER BY 2 DESC, 3;
 ```
 
 
