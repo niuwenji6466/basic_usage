@@ -64,3 +64,19 @@ TEST@shuguo.com           |
 
 多列排序是指基于多个字段或表达式的排序，使用逗号进行分隔
 
+```sql
+SELECT col1, col2, ...
+  FROM t
+ ORDER BY col1 ASC, col2 DESC, ...;
+ 
+#首先基于第一个字段进行排序；对于第一个字段排序相同的数据，再基于第二个字段进行排序；依此类推
+
+SELECT emp_name, salary, hire_date
+  FROM employee
+ WHERE dept_id = 4
+ ORDER BY salary DESC, hire_date;
+
+```
+
+
+
