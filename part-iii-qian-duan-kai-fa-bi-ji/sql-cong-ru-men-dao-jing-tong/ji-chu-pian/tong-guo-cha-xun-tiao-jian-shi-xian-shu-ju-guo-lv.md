@@ -88,3 +88,7 @@ SELECT emp_name, salary, hire_date
 
 在 SELECT 列表中，salary 是第 2 个字段，hire\_date 是第 3 个字段。因此该语句也是先按照月薪从高到低排序，月薪相同时再按照入职先后进行排序。
 
+### 中文排序 {#-2}
+
+
+
