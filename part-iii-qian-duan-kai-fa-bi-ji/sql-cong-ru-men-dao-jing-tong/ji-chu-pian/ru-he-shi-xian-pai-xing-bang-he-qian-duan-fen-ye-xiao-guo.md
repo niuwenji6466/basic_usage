@@ -37,10 +37,15 @@ SELECT emp_name, salary
 
 使用标准 SQL 实现分页查询：
 
- 假设前端页面每次显示 5 条记录；当用户点击按钮显示第 3 页的数据，也就是第 11 条到第 15 条记录时，使用 FETCH 子句实现如下：
+假设前端页面每次显示 5 条记录；当用户点击按钮显示第 3 页的数据，也就是第 11 条到第 15 条记录时，使用 FETCH 子句实现如下：
 
-```
-
+```sql
+-- Oracle、SQL Server 以及 PostgreSQL 实现
+SELECT emp_name, salary
+  FROM employee
+ ORDER BY salary DESC
+OFFSET 10 ROWS
+ FETCH FIRST 5 ROWS ONLY;
 ```
 
 
