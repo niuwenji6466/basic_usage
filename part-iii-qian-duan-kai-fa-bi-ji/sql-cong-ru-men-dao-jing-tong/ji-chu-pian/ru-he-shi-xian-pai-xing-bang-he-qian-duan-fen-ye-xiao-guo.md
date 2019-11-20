@@ -17,5 +17,5 @@ OFFSET 0 ROWS
  FETCH FIRST 5 ROWS ONLY;
 ```
 
-
+其中，ORDER BY 按照月薪从高到低进行排序；OFFSET 表示跳过 0 行；然后 FETCH 返回前 5 条数据
 
