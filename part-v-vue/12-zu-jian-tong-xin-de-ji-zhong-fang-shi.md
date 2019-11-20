@@ -340,3 +340,4 @@ const store = new Vuex.Store({
 
 这个就是最基本也是完整的vuex代码；vuex 包含有五个基本的对象：
 
+* 
