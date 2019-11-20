@@ -19,6 +19,12 @@ SELECT 'OR'
 以下是 SQL 中各种条件运算符按照优先级从高到低进行的排列；必要时可以使用圆括号进行调整
 
 * =、!=、&lt;&gt;、&lt;、&lt;=、&gt;、&gt;=
+* IS \[NOT\] NULL、\[NOT\] LIKE、\[NOT\] BETWEEN、\[NOT\] IN、\[NOT\] EXISTS
+* NOT
+* AND
+* OR
+
+
 
 
 
