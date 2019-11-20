@@ -100,5 +100,5 @@ SELECT emp_name
  ORDER BY NLSSORT(emp_name,'NLS_SORT = SCHINESE_PINYIN_M');
 ```
 
-NLSSORT 是一个函数，返回了按照某种排序规则得到的字符序列；SCHINESEPINYINM 表示中文的拼音排序规则。该查询的结果如下：
+NLSSORT 是一个函数，返回了按照某种排序规则得到的字符序列；SCHINESEPINYINM 表示中文的拼音排序规则。
 
