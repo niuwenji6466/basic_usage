@@ -50,3 +50,18 @@ OFFSET 10 ROWS
 
 其中，ORDER BY 按照月薪从高到低进行排序；OFFSET 跳过 10 行；然后 FETCH 返回随后的 5 条数据。
 
+通过这种分页查询的方式，还可以实现其他功能。例如，以下语句可以找出哪些员工的月薪排名第 3 高：
+
+```sql
+-- Oracle、SQL Server 以及 PostgreSQL 实现
+SELECT emp_name, salary
+  FROM employee
+ WHERE salary = (SELECT salary
+                   FROM employee
+                  ORDER BY salary DESC
+                 OFFSET 2 ROWS
+                  FETCH FIRST 1 ROWS ONLY);
+```
+
+
+
