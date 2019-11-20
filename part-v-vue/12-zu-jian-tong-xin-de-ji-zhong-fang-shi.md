@@ -309,3 +309,34 @@ inject: [name]
 
 vuex里面都有些什么内容？
 
+```js
+const store = new Vuex.Store({
+    state: {
+        name: 'weish',
+        age: 22
+    },
+    getters: {
+        personInfo(state) {
+            return `My name is ${state.name}, I am ${state.age}`;
+        }
+    }
+    mutations: {
+        SET_AGE(state, age) {
+            commit(age, age);
+        }
+    },
+    actions: {
+        nameAsyn({commit}) {
+            setTimeout(() => {
+                commit('SET_AGE', 18);
+            }, 1000);
+        }
+    },
+    modules: {
+        a: modulesA
+    }
+}
+```
+
+
+
