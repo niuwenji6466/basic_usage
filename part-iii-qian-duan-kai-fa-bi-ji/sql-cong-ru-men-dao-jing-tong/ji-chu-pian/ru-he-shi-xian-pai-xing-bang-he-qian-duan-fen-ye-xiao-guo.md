@@ -31,5 +31,5 @@ SELECT emp_name, salary
  LIMIT 5 OFFSET 0;
 ```
 
-
+其中，ORDER BY 按照月薪从高到低进行排序；OFFSET 表示跳过 0 行，LIMIT 返回前 5 条数据，也就是月薪 Top-5 的员工。另外，OFFSET 可以省略，同样表示跳过 0 行数据。该语句的结果与上面的 FETCH 示例相同
 
