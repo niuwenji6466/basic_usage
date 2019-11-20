@@ -74,7 +74,8 @@ FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIE
 
 其中，方括号（\[ \]）表示可选项；大括号（{ }）是必选项，竖线（\|）表示可以二选一。每个参数的作用如下：
 
-* OFFSET 表示偏移量，即从第 M+1 行开始返回；如果不指定，表示从第 1 行开始返回；ROW 和 ROWS 作用相同；
+* OFFSET 表示偏移量，即从第 M+1 行开始返回；如果不指定，表示从第 1 行开始返回；ROW 和 ROWS 作用相同
+* FETCH 指定返回多少行，FIRST 和 NEXT 作用相同
 
 
 
