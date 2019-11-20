@@ -368,5 +368,14 @@ vue-cli中使用vuex的方式
         └── m2.js         # 模块2
 ```
 
+state.js示例：
+
+```
+const state = {
+    name: 'weish',
+    age: 22
+};
+```
+
 
 
