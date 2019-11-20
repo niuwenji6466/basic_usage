@@ -111,5 +111,39 @@ export default {
 </style>
 ```
 
+* 在父组件中的子标签中监听该自定义事件并添加一个响应该事件的处理方法
+
+```js
+<template>
+    <div id="container">
+        <Child @getData="getData" v-on:listenToChildEvent="showMsgFromChild"></Child>
+        <p>{{msg}}</p>
+    </div>
+</template>
+<script>
+import Child from "@/components/Child";
+export default {
+  data() {
+    return {
+      msg: "父组件默认值"
+    };
+  },
+  methods: {
+    getData(data) {
+      this.msg = data;
+    },
+    showMsgFromChild(data){
+        console.log(data);
+    }
+  },
+  components: {
+    Child
+  }
+};
+</script>
+<style scoped>
+</style>
+```
+
 
 
