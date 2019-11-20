@@ -1,4 +1,4 @@
-#  VUE安装
+# VUE安装
 
 * 安装vue-cli
 
@@ -42,5 +42,5 @@ npm update vue-cli
 
 * 备注：vsCode 有两个控制台cmd\powerShell
 
-
+# 
 
