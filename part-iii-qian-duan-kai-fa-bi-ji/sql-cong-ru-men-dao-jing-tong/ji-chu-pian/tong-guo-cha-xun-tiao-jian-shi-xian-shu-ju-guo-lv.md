@@ -114,5 +114,5 @@ SELECT emp_name
  ORDER BY CONVERT(emp_name USING GBK);
 ```
 
-
+CONVERT 是一个函数，用于转换数据的字符集编码；这里是中文 GBK 字符集，默认使用拼音排序。该语句的结果和上面的 Oracle 示例一样。
 
