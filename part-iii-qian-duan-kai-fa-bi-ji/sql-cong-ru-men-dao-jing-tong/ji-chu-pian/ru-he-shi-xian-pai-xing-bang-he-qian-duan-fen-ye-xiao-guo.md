@@ -72,5 +72,5 @@ SELECT emp_name, salary
 FETCH { FIRST | NEXT } [ num_rows | N PERCENT ] { ROW | ROWS } { ONLY | WITH TIES };
 ```
 
-
+其中，方括号（\[ \]）表示可选项；大括号（{ }）是必选项，竖线（\|）表示可以二选一。每个参数的作用如下：
 
