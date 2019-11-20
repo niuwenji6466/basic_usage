@@ -5,6 +5,7 @@
 * [PART III - MySql](part-iii-qian-duan-kai-fa-bi-ji.md)
   * [SQL 从入门到精通](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong.md)
     * [基础篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian.md)
+      * [通过查询条件实现数据过滤](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian/tong-guo-cha-xun-tiao-jian-shi-xian-shu-ju-guo-lv.md)
     * [进阶篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/jin-jie-pian.md)
     * [开发篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/kai-fa-pian.md)
     * [拓展篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/tuo-zhan-pian.md)
