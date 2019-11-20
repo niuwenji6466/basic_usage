@@ -26,7 +26,11 @@ SELECT 'OR'
 
 ### 去除重复值 {#-6}
 
+SQL 使用 DISTINCT 关键字去除查询结果中的重复数据。例如，以下查询返回了员工表所有可能的性别：
 
+```sql
+SELECT DISTINCT sex  FROM employee;
+```
 
 
 
