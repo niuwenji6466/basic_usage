@@ -36,5 +36,29 @@ SELECT DISTINCT sex  FROM employee;
 
 ### 正则表达式 {#-2}
 
+Oracle 和 MySQL 支持类似的正则表达式函数：
+
+```sql
+-- MySQL 实现
+SELECT email
+  FROM t_regexp
+ WHERE REGEXP_LIKE(email, '^[a-zA-Z0-9]+[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
+
+email                     |
+--------------------------|
+TEST@shuguo.com           |
+123.test@shuguo-sanguo.org|
+
+-- Oracle 实现
+SELECT email
+  FROM t_regexp
+ WHERE REGEXP_LIKE(email, '^[a-zA-Z0-9]+[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$');
+
+EMAIL                     |
+--------------------------|
+TEST@shuguo.com           |
+123.test@shuguo-sanguo.org|
+```
+
 
 
