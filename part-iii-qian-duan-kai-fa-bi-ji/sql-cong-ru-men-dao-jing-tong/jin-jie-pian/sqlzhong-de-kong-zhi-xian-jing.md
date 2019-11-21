@@ -49,5 +49,19 @@ NULLIF(1, 2)|NULLIF(1, 1)|
 #因为 1 不等于 2，该查询的第一列结果为 1；因为 3 等于 3，第二列结果为 NULL
 ```
 
+NULLIF 函数的一个常见用途是防止除零错误：
 
+```sql
+-- 除零错误
+SELECT *
+  FROM employee
+ WHERE 1 / 0 = 1;
+
+-- 避免除零错误
+SELECT *
+  FROM employee
+ WHERE 1 / NULLIF(0 , 0) = 1;
+```
+
+第一个查询中被除数为 0，出现除零错误（MySQL 可能不会提示错误）；第二个查询使用 NULLIF 函数将被除数 0 转换为 NULL，整个结果为 NULL。
 
