@@ -57,3 +57,25 @@ S-Q-L                       |
 
 除了 CONCAT 函数之外，还可以使用连接符将字符串进行连接：
 
+```sql
+-- Oracle 和 PostgreSQL 实现
+SELECT 'S' || '-' || 'Q' || '-' || 'L'
+  FROM employee
+ WHERE emp_id = 1;
+
+'S'||'-'||'Q'||'-'||'L'|
+-----------------------|
+S-Q-L                  |
+
+-- SQL Server 实现
+SELECT 'S' + '-' + 'Q' + '-' + 'L'
+  FROM employee
+ WHERE emp_id = 1;
+
+     |
+-----|
+S-Q-L|
+```
+
+
+
