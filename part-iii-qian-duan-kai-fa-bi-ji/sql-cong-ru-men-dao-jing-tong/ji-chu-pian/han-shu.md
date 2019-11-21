@@ -182,6 +182,8 @@ SELECT email, PATINDEX('%@%', email), REPLACE(email, '@', '.')
 SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
   FROM employee
  WHERE emp_id = 1;
+ # “@”是“liubei@shuguo.com”中的第 7 个字符，INSTR 函数返回了数字 7。
+ # SQL Server 使用 PATINDEX 函数查找子串，PostgreSQL 使用 POSITION 函数查找子串。REPLACE 函数将电子邮箱中的“@”替换为“.”
 ```
 
 
