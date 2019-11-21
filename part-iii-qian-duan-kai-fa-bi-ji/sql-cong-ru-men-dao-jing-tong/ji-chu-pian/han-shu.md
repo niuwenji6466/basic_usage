@@ -24,3 +24,7 @@ ASCII('SQL')|CHAR(83)|
 
 大写字母 S 的 ASCII 编码为 83。Oracle 和 PostgreSQL 实现了 CHR 函数，MySQL 和 SQL Server 实现了 CHAR 函数。
 
+### 字符串连接 {#-1}
+
+连接操作用于将两个或者多个字符串拼接到一起，CONCAT 函数是执行连接操作的标准函数：
+
