@@ -281,7 +281,7 @@ SELECT emp_name,hire_date, CURRENT_DATE, DATEDIFF(CURRENT_DATE, hire_date) AS da
 -- SQL Server 实现
 SELECT emp_name,hire_date, GETDATE(), DATEDIFF(DAY, hire_date, GETDATE()) AS days
   FROM employee;
-  
+
   # MySQL 中的 DATEDIFF 函数返回第一个日期减去第二个日期的天数。SQL Server 中的 DATEDIFF 函数接受三个参数，
   # 可以返回第二个日期减去第一个日期的天数（DAY）、月数（MONTH）或者年数（YEAR）等。
 ```
@@ -296,7 +296,7 @@ SELECT hire_date, hire_date + INTERVAL '1' YEAR AS anniversary
 -- SQL Server 实现
 SELECT hire_date, DATEADD(YEAR, 1, hire_date) AS anniversary
   FROM employee;
-  
+
   #INTERVAL 表示一段时间，例如 5 分钟（MINUTE）、1 个月（MONTH）等。SQL Server 使用 DATEADD 函数为日期增加一段时间
 ```
 
@@ -338,4 +338,10 @@ SELECT '666' + 123, CONCAT('Hire Date: ', hire_date)
 ```
 
 该查询中存在 2 个隐式类型转换。第一个转换将字符串“666”转换为数字 666，第二个转换将日期类型的 hire\_date 转换为字符串。
+
+### 使用 COUNT 函数统计数量 {#count}
+
+
+
+
 
