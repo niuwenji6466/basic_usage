@@ -29,7 +29,9 @@ SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
 
 table1 RIGHT JOIN table2        等价于： table2 LEFT JOIN table1
 
+#### 全外连接 {#-5}
 
+全外连接（Full Outer Join）等价于左外连接加上右外连接，同时返回左表和右表中所有的数据；对于两个表中不满足连接条件的数据返回空值。全外连接使用关键字 FULL OUTER JOIN 表示，也可以简写成 FULL JOIN 。全外连接的原理如下图所示（基于两个表的 id 进行连接）：
 
 
 
