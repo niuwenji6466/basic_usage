@@ -74,7 +74,16 @@ SELECT sname,
 
 ### 搜索 CASE 表达式 {#case-1}
 
+搜索 CASE 表达式的语法如下：
 
+```sql
+CASE
+  WHEN condition1 THEN result1
+  WHEN condition2 THEN result2
+  ...
+  [ELSE default_result]
+END
+```
 
 
 
