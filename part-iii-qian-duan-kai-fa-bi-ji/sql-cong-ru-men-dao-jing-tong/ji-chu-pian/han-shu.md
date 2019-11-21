@@ -244,7 +244,7 @@ EXTRACT\(part FROM dt\) 函数可以返回日期时间中的某个部分，例�
 SELECT emp_name, hire_date
   FROM employee
  WHERE EXTRACT(YEAR FROM hire_date) = 2018;
- 
+
  #EXTRACT 函数中的 YEAR 表示提取年份信息
 ```
 
@@ -271,5 +271,71 @@ SELECT emp_name,hire_date, CURRENT_DATE, CURRENT_DATE - hire_date AS days
 #Oracle 以及 PostgreSQL 中两个日期相减就可以得到它们之间相差的天数
 ```
 
+MySQL 和 SQL Server 使用 DATEDIFF 函数计算两个日期之间的间隔：
 
+```sql
+-- MySQL 实现
+SELECT emp_name,hire_date, CURRENT_DATE, DATEDIFF(CURRENT_DATE, hire_date) AS days
+  FROM employee;
+
+-- SQL Server 实现
+SELECT emp_name,hire_date, GETDATE(), DATEDIFF(DAY, hire_date, GETDATE()) AS days
+  FROM employee;
+  
+  # MySQL 中的 DATEDIFF 函数返回第一个日期减去第二个日期的天数。SQL Server 中的 DATEDIFF 函数接受三个参数，
+  # 可以返回第二个日期减去第一个日期的天数（DAY）、月数（MONTH）或者年数（YEAR）等。
+```
+
+另外，日期时间加上/减去一个时间间隔，可以得到一个新的日期时间。以下示例用于计算员工入职一周年的纪念日：
+
+```
+-- Oracle、MySQL 以及 PostgreSQL 实现
+SELECT hire_date, hire_date + INTERVAL '1' YEAR AS anniversary
+  FROM employee;
+
+-- SQL Server 实现
+SELECT hire_date, DATEADD(YEAR, 1, hire_date) AS anniversary
+  FROM employee;
+  
+  #INTERVAL 表示一段时间，例如 5 分钟（MINUTE）、1 个月（MONTH）等。SQL Server 使用 DATEADD 函数为日期增加一段时间
+```
+
+### 类型转换函数 {#-5}
+
+CAST\(expr AS type\) 函数用于将数据转换为不同的类型。以下是一个类型转换的示例：
+
+```sql
+-- Oracle 实现
+-- 修改日期显示格式
+ALTER SESSION SET nls_date_format = 'yyyy-mm-dd';
+SELECT CAST('666' AS INTEGER), CAST(hire_date AS CHAR(10))
+  FROM employee
+ WHERE emp_id = 1;
+
+-- SQL Server 和 PostgreSQL 实现
+SELECT CAST('666' AS INTEGER), CAST(hire_date AS CHAR(10))
+  FROM employee
+ WHERE emp_id = 1;
+
+-- MySQL 实现
+SELECT CAST('666' AS SIGNED INTEGER), CAST(hire_date AS CHAR(10))
+  FROM employee
+ WHERE emp_id = 1;
+```
+
+类型转换可能导致精度的丢失，并且 CAST 函数在各种数据库中支持的转换类型取决于数据库的实现。
+
+除了明确指定的类型转换之外，数据库可能在执行某些操作时尝试隐式的类型转换。例如以下语句：
+
+```sql
+SELECT '666' + 123, CONCAT('Hire Date: ', hire_date)
+  FROM employee
+ WHERE emp_id = 1;
+
+'666' + 123|CONCAT('Date: ', hire_date)|
+-----------|---------------------------|
+        789|Hire Date: 2000-01-01      |
+```
+
+该查询中存在 2 个隐式类型转换。第一个转换将字符串“666”转换为数字 666，第二个转换将日期类型的 hire\_date 转换为字符串。
 
