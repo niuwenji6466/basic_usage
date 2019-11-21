@@ -59,3 +59,16 @@ INSERT INTO t_case(sname, cname, score) VALUES ('王五', '英语', 82);
 
 ![](/assets/20190724193935532.png)
 
+目前的结果还是 9 条记录。然后将每个学生的成绩合并成一条记录，此时需要使用到分组汇总的操作：
+
+```sql
+SELECT sname,
+       SUM(CASE cname WHEN '语文' THEN score ELSE 0 END) AS "语文",
+       SUM(CASE cname WHEN '数学' THEN score ELSE 0 END) AS "数学",
+       SUM(CASE cname WHEN '英语' THEN score ELSE 0 END) AS "英语"
+  FROM t_case
+ GROUP BY sname;
+```
+
+在这里我们使用了 SUM 汇总函数和 GROUP BY 分组操作，这些内容是接下来两篇的主题。在此简单说明一下，GROUP BY 按照学生进行分组，这样每个学生最终只有一条记录；同时将学生每门课程的成绩使用 SUM 函数进行求和（每科成绩加上两个 0），还是得到每科的成绩。这样就实现了数据的行转列
+
