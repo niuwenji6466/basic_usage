@@ -13,3 +13,21 @@ END
 
 首先计算 expression 的值；然后依次与 WHEN 列表中的值（value1，value2，…）进行比较，找到第一个相等的值并返回对应的结果（result1，result2，…）；如果没有找到相等的值，返回 ELSE 中的默认结果；如果此时没有指定 ELSE，返回 NULL 值。
 
+以下示例使用简单 CASE 表达式将员工的部门编号显示为相应的名称：
+
+```sql
+SELECT emp_name,
+       CASE dept_id
+         WHEN 1 THEN '行政管理部'
+         WHEN 2 THEN '人力资源部'
+         WHEN 3 THEN '财务部'
+         WHEN 4 THEN '研发部'
+         WHEN 5 THEN '销售部'
+         WHEN 6 THEN '保卫部'
+         ELSE '其他部门'
+       END AS department
+  FROM employee;
+```
+
+
+
