@@ -40,5 +40,18 @@ SQL World              |
 #Oracle 中的 CONCAT 函数一次只能连接两个字符串；其他数据库可以一次连接多个字符串：CONCAT(str1, str2, ...)。
 ```
 
+CONCAT 函数还有一个扩展形式：CONCAT\_WS，可以指定连接的分隔符：
+
+```sql
+-- MySQL、SQL Server 以及 PostgreSQL 实现
+SELECT CONCAT_WS('-','S', 'Q', 'L')
+  FROM employee
+ WHERE emp_id = 1;
+
+CONCAT_WS('-','S', 'Q', 'L')|
+----------------------------|
+S-Q-L                       |
+```
+
 
 
