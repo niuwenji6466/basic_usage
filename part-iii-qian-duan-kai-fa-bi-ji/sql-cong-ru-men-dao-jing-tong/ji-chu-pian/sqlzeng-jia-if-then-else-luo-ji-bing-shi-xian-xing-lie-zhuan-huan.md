@@ -33,3 +33,23 @@ SELECT emp_name,
 
 **CASE 表达式的一个常见应用就是实现表的行列转换**
 
+假设存在以下学生成绩表：
+
+```sql
+-- 创建成绩表 t_case，sname 为学生姓名，cname 为课程名称，score 为考试成绩
+CREATE TABLE t_case(sname varchar(10), cname varchar(10), score int);
+
+-- 插入测试数据
+INSERT INTO t_case(sname, cname, score) VALUES ('张三', '语文', 80);
+INSERT INTO t_case(sname, cname, score) VALUES ('李四', '语文', 77);
+INSERT INTO t_case(sname, cname, score) VALUES ('王五', '语文', 91);
+INSERT INTO t_case(sname, cname, score) VALUES ('张三', '数学', 85);
+INSERT INTO t_case(sname, cname, score) VALUES ('李四', '数学', 90);
+INSERT INTO t_case(sname, cname, score) VALUES ('王五', '数学', 60);
+INSERT INTO t_case(sname, cname, score) VALUES ('张三', '英语', 81);
+INSERT INTO t_case(sname, cname, score) VALUES ('李四', '英语', 69);
+INSERT INTO t_case(sname, cname, score) VALUES ('王五', '英语', 82);
+```
+
+
+
