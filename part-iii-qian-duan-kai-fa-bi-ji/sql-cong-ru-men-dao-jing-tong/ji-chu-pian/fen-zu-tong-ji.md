@@ -139,3 +139,5 @@ SELECT dept_id, AVG(salary)
 
 该语句在所有数据库中都返回了类似的错误信息：WHERE 子句中不允许使用聚合函数。因为 SQL 中的 WHERE 子句在 GROUP BY 子句之前执行，它是针对 FROM 中的表进行数据过滤；也就是说，WHERE 子句执行时还没有进行分组操作，没有计算 AVG\(salary\) 函数。
 
+为了支持基于汇总结果的过滤，SQL 提供了 HAVING 子句；同时要求 HAVING 必须与 GROUP BY 一起使用。上面的错误示例可以修改如下：
+
