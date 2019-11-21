@@ -83,3 +83,16 @@ S-Q-L|
 
 字符串的长度可以按照两种方式进行计算：字符数量和字节数量。在多字节编码中，一个字符可能占用多个字节。CHARLENGTH 函数用于计算字符串包含的字符数量，OCTETLENGTH 用于计算字符串包含的字节数量：
 
+```sql
+-- MySQL 和 PostgreSQL 实现
+SELECT CHAR_LENGTH('数据库'), OCTET_LENGTH('数据库')
+  FROM employee
+ WHERE emp_id = 1;
+
+CHAR_LENGTH('数据库')|OCTET_LENGTH('数据库')|
+------------------|-------------------|
+                 3|                  9|
+```
+
+
+
