@@ -28,3 +28,15 @@ ASCII('SQL')|CHAR(83)|
 
 连接操作用于将两个或者多个字符串拼接到一起，CONCAT 函数是执行连接操作的标准函数：
 
+```sql
+SELECT CONCAT('SQL', ' World')
+  FROM employee
+ WHERE emp_id = 1;
+
+CONCAT('SQL', ' World')|
+-----------------------|
+SQL World              |
+```
+
+
+
