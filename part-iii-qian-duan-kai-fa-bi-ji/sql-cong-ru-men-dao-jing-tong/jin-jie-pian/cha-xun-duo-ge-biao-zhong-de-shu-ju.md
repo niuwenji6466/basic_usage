@@ -21,5 +21,7 @@ SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
  ORDER BY d.dept_id DESC;
 ```
 
+#### 右外连接 {#-4}
+
 
 
