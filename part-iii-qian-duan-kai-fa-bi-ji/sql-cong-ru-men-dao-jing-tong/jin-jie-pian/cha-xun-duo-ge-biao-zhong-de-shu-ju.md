@@ -46,3 +46,11 @@ SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
 
 MySQL不支持全外连接。 ANSI SQL/86 标准语法不支持全外连接。
 
+
+
+#### 自然连接 {#-7}
+
+
+
+
+
