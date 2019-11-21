@@ -186,5 +186,7 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
  # SQL Server 使用 PATINDEX 函数查找子串，PostgreSQL 使用 POSITION 函数查找子串。REPLACE 函数将电子邮箱中的“@”替换为“.”
 ```
 
+### 日期和时间的存储
+
 
 
