@@ -371,3 +371,16 @@ COUNT(sex)|COUNT(DISTINCT sex)|
 
 由于员工表中的性别只有“男”和“女”，加上 DISTINCT 之后统计的结果变成了 2
 
+如果参数中存在空值，COUNT 函数通常会忽略这些空值。以下示例基于奖金字段进行统计：
+
+```sql
+SELECT COUNT(*), COUNT(bonus), COUNT(*) - COUNT(bonus)
+  FROM employee;
+
+COUNT(*)|COUNT(bonus)|COUNT(*) - COUNT(bonus)|
+--------|------------|-----------------------|
+      25|           9|                     16|
+```
+
+
+
