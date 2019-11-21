@@ -2,7 +2,7 @@
 
 SQL 中的 GROUP BY 子句可以将数据按照某种规则进行分组。以下示例使用 GROUP BY 将员工按照性别进行分组：
 
-```
+```sql
 SELECT sex
   FROM employee
  GROUP BY sex;
@@ -17,5 +17,74 @@ GROUP BY 将性别的每个不同取值分为一组，每个组返回一条记�
 
 #### 多字段分组 {#-1}
 
+GROUP BY 也可以基于多个字段或表达式进行分组。以下语句按照部门和性别的组合进行分组：
 
+```sql
+SELECT dept_id, sex
+  FROM employee
+ GROUP BY dept_id, sex;
+
+dept_id| sex|
+-------|----|
+      1|男  |
+      2|男  |
+      3|女  |
+      4|男  |
+      4|女  |
+      5|男  |
+```
+
+研发部（部门编号为 4）既有男性员工又有女性员工，因此分为 2 个组
+
+将 GROUP BY 子句与聚合函数一起使用可以实现数据的分组汇总功能
+
+### 分组汇总 {#-2}
+
+首先，基于分组字段的不同取值将数据分成 N 个组；然后在组内分别应用聚合函数进行统计，每个组返回一个分析结果。
+
+我们来看一个示例。以下语句按照性别统计员工的数量和平均月薪：
+
+```sql
+SELECT sex, COUNT(*), AVG(salary)
+  FROM employee
+ GROUP BY sex;
+
+sex| COUNT(*)|AVG(salary) |
+---|---------|------------|
+男  |      22|10145.454545|
+女  |       3| 8200.000000|
+```
+
+先将员工按照性别分为两个组，然后使用聚合函数分别计算男女员工的总数和平均月薪。该查询的结果显示：男性员工有 22 人，平均月薪约为 10145；女性员工有 3 人，平均月薪为 8200。
+
+我们再来看一个多字段分组统计的示例。以下语句按照部门和职位统计员工的数量和平均月薪，并且按照平均月薪从高到低进行排序：
+
+```sql
+SELECT dept_id, job_id, COUNT(*), AVG(salary)
+  FROM employee
+ GROUP BY dept_id, job_id
+ ORDER BY AVG(salary) DESC;
+```
+
+#### 基于表达式分组统计 {#-4}
+
+GROUP BY 也可以基于表达式的值进行分组统计。以下示例统计每年入职的员工数量：
+
+```sql
+-- Oracle、MySQL 以及 PostgreSQL 实现
+SELECT EXTRACT(YEAR FROM hire_date) AS "入职年份",
+       COUNT(*) AS "员工数量"
+  FROM employee
+ GROUP BY EXTRACT(YEAR FROM hire_date)
+ ORDER BY EXTRACT(YEAR FROM hire_date);
+
+-- SQL Server 实现
+SELECT DATEPART(YEAR, hire_date) AS "入职年份",
+       COUNT(*) AS "员工数量"
+  FROM employee
+ GROUP BY DATEPART(YEAR, hire_date)
+ ORDER BY DATEPART(YEAR, hire_date);
+```
+
+EXTRACT 函数和 DATEPART 函数用于提取入职日期中的年份信息。
 
