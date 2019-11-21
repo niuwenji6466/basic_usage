@@ -188,5 +188,5 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
 
 ### 日期和时间的存储
 
-
+在数据库中，日期时间类型存在 3 种形式：
 
