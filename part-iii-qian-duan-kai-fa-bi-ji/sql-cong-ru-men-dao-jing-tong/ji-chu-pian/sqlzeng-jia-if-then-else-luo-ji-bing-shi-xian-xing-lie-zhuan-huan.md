@@ -91,3 +91,19 @@ END
 
 我们可以将上一节的示例改写如下：
 
+```sql
+SELECT emp_name,
+       CASE 
+         WHEN dept_id = 1 THEN '行政管理部'
+         WHEN dept_id = 2 THEN '人力资源部'
+         WHEN dept_id = 3 THEN '财务部'
+         WHEN dept_id = 4 THEN '研发部'
+         WHEN dept_id = 5 THEN '销售部'
+         WHEN dept_id = 6 THEN '保卫部'
+         ELSE '其他部门'
+       END AS department
+  FROM employee;
+```
+
+
+
