@@ -65,13 +65,26 @@ SELECT dept_id, d.dept_name, e.emp_name
 
 其中，USING 表示使用两个表中的公共字段（dept\_id）进行等值连接。查询语句中的公共字段不需要添加表名限定。该语句的结果与上文中的内连接查询示例相同。
 
-
-
 #### 自连接 {#-8}
 
 自连接（Self Join）是指连接操作符的两边都是同一个表，也就是将一个表和它自己进行连接。自连接本质上并没有什么特殊之处，主要用于处理那些对自己进行了外键引用的表。
 
+例如，员工表中的经理字段（manager）是一个外键列，引用了员工表自身的编号字段（emp\_id）。如果要显示员工姓名以及他们经理的姓名，可以通过自连接实现：
 
+```sql
+SELECT e.emp_name AS "员工姓名",
+       m.emp_name AS "经理姓名"
+  FROM employee e
+  LEFT JOIN employee m ON (m.emp_id = e.manager)
+ WHERE e.dept_id = 1
+ ORDER BY e.emp_id;
+
+员工姓名|经理姓名|
+-------|--------|
+刘备   |[NULL]  |
+关羽   |刘备    |
+张飞   |刘备    |
+```
 
 
 
