@@ -369,5 +369,5 @@ COUNT(sex)|COUNT(DISTINCT sex)|
         25|                  2|
 ```
 
-
+由于员工表中的性别只有“男”和“女”，加上 DISTINCT 之后统计的结果变成了 2
 
