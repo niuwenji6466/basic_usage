@@ -341,7 +341,22 @@ SELECT '666' + 123, CONCAT('Hire Date: ', hire_date)
 
 ### 使用 COUNT 函数统计数量 {#count}
 
+COUNT\(\*\) 函数用于统计行数。以下示例统计员工的数量：
 
+```sql
+SELECT COUNT(*) AS "员工数量"
+  FROM employee;
+
+员工数量
+------|
+    25|
+```
+
+使用聚合函数时需要注意两点：
+
+* **在聚合函数的参数中加上 DISTINCT 关键字，可以在计算之前排除重复值**
+
+* **聚合函数在计算时，忽略输入值为 NULL 的数据行；COUNT\(\*\) 除外**
 
 
 
