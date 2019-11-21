@@ -14,3 +14,12 @@
 
 假设我们想要查看所有的部门及其员工信息。考虑到某些部门可能还没有入职员工，如果使用内连接，则无法显示这些部门；因此使用左外连接：
 
+```sql
+SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
+  FROM department d
+  LEFT JOIN employee e ON (e.dept_id = d.dept_id)
+ ORDER BY d.dept_id DESC;
+```
+
+
+
