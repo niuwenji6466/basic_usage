@@ -201,8 +201,33 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
 
 CURRENT\_DATE、CURRENT\_TIME 以及 CURRENT\_TIMESTAMP 函数分别返回数据库系统当前的日期、时间以及时间戳。以下是不同数据库中的实现示例：
 
-```
+```sql
+-- MySQL 和 PostgreSQL 实现
+SELECT CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP
+  FROM employee
+ WHERE emp_id = 1;
 
+CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP  |
+------------|------------|-------------------|
+  2019-10-23|    11:29:55|2019-10-23 11:29:55|
+
+-- Oracle 实现
+SELECT CURRENT_DATE, CURRENT_TIMESTAMP
+  FROM employee
+ WHERE emp_id = 1;
+
+CURRENT_DATE       |CURRENT_TIMESTAMP  |
+-------------------|-------------------|
+2019-10-23 11:31:58|2019-10-23 11:31:58|
+
+-- SQL Server 实现
+SELECT CAST(GETDATE() AS DATE), CAST(GETDATE() AS TIME), CURRENT_TIMESTAMP
+  FROM employee
+ WHERE emp_id = 1;
+
+          |        |                   |
+----------|--------|-------------------|
+2019-10-23|11:35:47|2019-10-23 11:35:47|
 ```
 
 
