@@ -36,3 +36,16 @@ emp_id|
 
 NULLIF\(expr1, expr2\) 函数接受 2 个参数，如果第一个参数等于第二个参数，返回 NULL；否则，返回第一个参数的值。
 
+```sql
+SELECT NULLIF(1, 2),
+       NULLIF(3, 3)
+  FROM employee
+ WHERE emp_id = 1;
+
+NULLIF(1, 2)|NULLIF(1, 1)|
+------------|------------|
+           1|      [NULL]|
+```
+
+
+
