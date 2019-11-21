@@ -53,5 +53,5 @@ INSERT INTO t_case(sname, cname, score) VALUES ('王五', '英语', 82);
 
 执行以上语句创建 t\_case 表并且插入数据。该表中的数据如下：
 
-
+![](/assets/20190724193652245.png)
 
