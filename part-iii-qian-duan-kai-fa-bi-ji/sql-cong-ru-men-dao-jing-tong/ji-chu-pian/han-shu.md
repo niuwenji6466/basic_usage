@@ -92,6 +92,8 @@ SELECT CHAR_LENGTH('数据库'), OCTET_LENGTH('数据库')
 CHAR_LENGTH('数据库')|OCTET_LENGTH('数据库')|
 ------------------|-------------------|
                  3|                  9|
+                 
+#字符串“数据库”包含 3 个字符，在 UTF-8 编码中占用了 9 个字节。MySQL 和 PostgreSQL 实现了这两个标准的函数。
 ```
 
 
