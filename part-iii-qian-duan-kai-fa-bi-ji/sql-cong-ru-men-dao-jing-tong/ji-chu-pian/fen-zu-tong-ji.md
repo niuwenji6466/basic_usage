@@ -141,3 +141,17 @@ SELECT dept_id, AVG(salary)
 
 为了支持基于汇总结果的过滤，SQL 提供了 HAVING 子句；同时要求 HAVING 必须与 GROUP BY 一起使用。上面的错误示例可以修改如下：
 
+```sql
+SELECT dept_id, AVG(salary)
+  FROM employee
+ GROUP BY dept_id
+HAVING AVG(salary) > 10000;
+
+dept_id|AVG(salary) |
+-------|------------|
+      1|26666.666667|
+      2|13166.666667|
+```
+
+
+
