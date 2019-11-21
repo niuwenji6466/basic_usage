@@ -237,5 +237,39 @@ SELECT CAST(GETDATE() AS DATE), CAST(GETDATE() AS TIME), CURRENT_TIMESTAMP
 
 #### 提取日期时间信息 {#-3}
 
+EXTRACT\(part FROM dt\) 函数可以返回日期时间中的某个部分，例如年、月、小时等。以下示例查找 2018 年入职的员工：
+
+```sql
+-- Oracle、MySQL 以及 PostgreSQL 实现
+SELECT emp_name, hire_date
+  FROM employee
+ WHERE EXTRACT(YEAR FROM hire_date) = 2018;
+ 
+ #EXTRACT 函数中的 YEAR 表示提取年份信息
+```
+
+SQL Server 使用 DATEPART\(part, dt\) 函数实现相同的功能：
+
+```
+-- SQL Server 实现
+SELECT emp_name, hire_date
+  FROM employee
+ WHERE DATEPART(YEAR, hire_date) = 2018;
+```
+
+EXTRACT 和 DATEPART 函数可以支持更多的选项，例如 MONTH、DAY、WEEK、HOUR、MINUTE、SECOND 等。每个数据库支持的选项可能不同，使用时可以参考数据库文档。
+
+#### 日期和时间的数学运算 {#-4}
+
+日期和时间的运算主要包括两个日期相减以及一个日期加/减一个时间间隔。以下示例计算员工从入职到当前日期之间的天数：
+
+```sql
+-- Oracle 以及 PostgreSQL 实现
+SELECT emp_name,hire_date, CURRENT_DATE, CURRENT_DATE - hire_date AS days
+  FROM employee;
+
+#Oracle 以及 PostgreSQL 中两个日期相减就可以得到它们之间相差的天数
+```
+
 
 
