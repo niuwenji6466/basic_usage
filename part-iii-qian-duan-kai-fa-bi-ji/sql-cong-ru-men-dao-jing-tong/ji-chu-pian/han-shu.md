@@ -382,5 +382,20 @@ COUNT(*)|COUNT(bonus)|COUNT(*) - COUNT(bonus)|
       25|           9|                     16|
 ```
 
+从结果可以看出只有 9 名员工有奖金，其他的 16 名员工没有奖金。COUNT\(\*\) 总是返回所有满足查询条件的行数
+
+### 使用 AVG 函数计算平均值 {#avg}
+
+AVG 函数用于计算一组数据的平均值。以下示例用于计算所有员工的平均月薪：
+
+```sql
+SELECT AVG(salary)
+  FROM employee;
+
+AVG(salary)|
+-----------|
+9912.000000|
+```
+
 
 
