@@ -25,5 +25,11 @@ SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
 
 右外连接（Right Outer Join）首先返回右表中所有的数据；对于左表，返回满足连接条件的数据，如果没有相应的数据就返回空值。右外连接使用关键字 RIGHT OUTER JOIN 表示，也可以简写成 RIGHT JOIN。右外连接的原理如下图所示（基于两个表的 id 进行连接）：
 
-![](/assets/20190729220026920.png)
+![](/assets/20190729220026920.png)其中，id = 5 的数据在 table2 中存在，在 table1 中不存在；右外连接仍然会返回右表中的该记录，而对于 table1 中的名称（name），返回的是空值。简而言之：
+
+table1 RIGHT JOIN table2        等价于： table2 LEFT JOIN table1
+
+
+
+
 
