@@ -37,3 +37,12 @@ table1 RIGHT JOIN table2        等价于： table2 LEFT JOIN table1
 
 假如我们想要查看所有的部门和员工信息。同时考虑到某些部门可能还没有员工，而且某些员工可能还没有分配部门，可以使用全外连接：
 
+```sql
+-- Oracle、SQL Server 以及 PostgreSQL 实现
+SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
+  FROM department d
+  FULL JOIN employee e ON (e.dept_id = d.dept_id);
+```
+
+
+
