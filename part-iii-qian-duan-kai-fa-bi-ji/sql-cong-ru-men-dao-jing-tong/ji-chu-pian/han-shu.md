@@ -195,7 +195,7 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
 
 * **TIMESTAMP**，时间戳类型，包含年、月、日、时、分、秒，以及小数秒。用于对时间精度要求比较高的场景，比如存储订单时间
 
-
+### 日期时间函数 {#-1}
 
 
 
