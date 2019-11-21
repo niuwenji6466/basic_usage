@@ -235,5 +235,7 @@ SELECT CAST(GETDATE() AS DATE), CAST(GETDATE() AS TIME), CURRENT_TIMESTAMP
 * Oracle 支持 SYSDATE、SYSTIMESTAMP 获取当前日期和时间戳
 * MySQL 支持 CURDATE\(\)、CURRENTDATE\(\) 获取当前日期，CURTIME\(\)、CURRENTTIME\(\) 获取当前时间，NOW\(\)、CURRENT\_TIMESTAMP\(\) 获取当前时间戳
 
+#### 提取日期时间信息 {#-3}
+
 
 
