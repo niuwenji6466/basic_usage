@@ -96,5 +96,69 @@ CHAR_LENGTH('数据库')|OCTET_LENGTH('数据库')|
 #字符串“数据库”包含 3 个字符，在 UTF-8 编码中占用了 9 个字节。MySQL 和 PostgreSQL 实现了这两个标准的函数。
 ```
 
+Oracle 中使用 LENGTH 函数和 LENGTHB 函数计算字符数量和字节数量：
+
+```
+-- Oracle 实现
+SELECT LENGTH('数据库'), LENGTHB('数据库')
+  FROM employee
+ WHERE emp_id = 1;
+
+LENGTH('数据库')|LENGTHB('数据库')|
+-------------|--------------|
+            3|             9|
+
+#PostgreSQL 中也可以使用 LENGTH 函数计算字符数量。 MySQL 中的 LENGTH 函数计算的是字节数量。
+```
+
+SQL Server 中使用 LEN 函数和 DATALENGTH 函数计算字符数量和字节数量：
+
+```sql
+-- SQL Server 实现
+SELECT LEN('数据库') AS LEN,
+       DATALENGTH('数据库') AS DATALENGTH
+  FROM employee
+ WHERE emp_id = 1;
+
+LEN|DATALENGTH|
+---|----------|
+  3|         6|
+  
+#字符串“数据库”在“ChinesePRCCIAIWS”字符集中占用 6 个字节，因为每个汉字占用 2 个字节。
+```
+
+### 获取子串 {#-4}
+
+SUBSTRING 函数或者 SUBSTR 函数用于返回字符串中的子串：
+
+```
+-- MySQL、SQL Server 以及 PostgreSQL 实现
+SELECT emp_name, SUBSTRING(emp_name, 1, 1)
+  FROM employee
+ WHERE emp_id = 1;
+
+-- Oracle、MySQL 以及 PostgreSQL 实现
+SELECT emp_name, SUBSTR(emp_name, 1, 1)
+  FROM employee
+ WHERE emp_id = 1;
+ 
+ #函数中的第二个参数表示子串的起始位置，第三个参数表示子串的长度。以上查询返回了员工姓名中的第一个字符
+ #在 Oracle 和 MySQL 中，起始位置可以是负数，表示从右往左计算起始位置。
+```
+
+### 截断字符串 {#-5}
+
+TRIM 函数用于删除字符串开头和结尾的指定字符：
+
+```sql
+SELECT TRIM('-' FROM '--S-Q-L--'), TRIM('  S-Q-L  ')
+  FROM employee
+ WHERE emp_id = 1;
+
+TRIM('-' FROM '--S-Q-L--')|TRIM('  S-Q-L  ')|
+--------------------------|-----------------|
+S-Q-L                     |S-Q-L            |
+```
+
 
 
