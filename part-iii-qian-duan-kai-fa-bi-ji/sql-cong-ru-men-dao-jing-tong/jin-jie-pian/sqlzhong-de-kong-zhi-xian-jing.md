@@ -88,3 +88,13 @@ emp_name|年收入     |年收入    |
 
 该查询中的第三列利用 COALESCE 函数将奖金为空的数据转换为 0，得到了正确的年收入。
 
+除了SQL 标准中定义的表达式之外，许多数据库还实现了一些类似的扩展函数：
+
+* Oracle 提供了 NVL\(expr1, expr2\) 以及 NVL2\(expr1, expr2, expr3\) 函数
+* MySQL 提供了 IFNULL\(expr1, expr2\) 以及 IF\(expr1, expr2, expr3\) 函数
+* SQL Server 提供了 ISNULL\(expr1, expr2\) 函数
+
+
+
+
+
