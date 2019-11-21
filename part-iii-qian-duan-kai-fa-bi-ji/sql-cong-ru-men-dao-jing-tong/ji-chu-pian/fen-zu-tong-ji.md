@@ -155,3 +155,25 @@ dept_id|AVG(salary) |
 
 HAVING 子句位于 GROUP BY 之后，对 AVG\(salary\) 函数的结果进行过滤。查询的结果显示只有 2 个部门的平均月薪大于 10000。
 
+
+
+因此，在 SQL 语句中可以使用 WHERE 子句对表进行过滤，同时使用 HAVING 对分组结果进行过滤。例如，以下语句用于查询月薪大于 10000 的员工数量超过 2 人的部门：
+
+```sql
+SELECT dept_id, COUNT(*)
+  FROM employee
+ WHERE salary > 10000
+ GROUP BY dept_id
+HAVING COUNT(*) > 2;
+
+dept_id|COUNT(*)|
+-------|--------|
+      1|       3|
+```
+
+首先，使用 WHERE 条件找出月薪大于 10000 的员工；然后 GROUP BY 按照部门统计员工的数量；最后使用 HAVING 子句选择数量大于 2 的部门。查询结果显示，行政管理部（dept\_id = 1）有 3 名员工月薪超过了 10000。
+
+
+
+从性能的角度来说，应该尽量使用 WHERE 条件过滤掉更多的数据，而不是等到分组之后再使用 HAVING 进行过滤；但如果业务需求只能基于汇总之后的结果进行过滤，那就另当别论了。
+
