@@ -36,6 +36,8 @@ SELECT CONCAT('SQL', ' World')
 CONCAT('SQL', ' World')|
 -----------------------|
 SQL World              |
+
+#Oracle 中的 CONCAT 函数一次只能连接两个字符串；其他数据库可以一次连接多个字符串：CONCAT(str1, str2, ...)。
 ```
 
 
