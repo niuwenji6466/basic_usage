@@ -54,5 +54,14 @@ MySQL不支持全外连接。 ANSI SQL/86 标准语法不支持全外连接。
 
 * 两个表中的连接字段必须名称相同，类型也相同
 
+针对上文中的内连接查询示例，可以使用 USING 简化如下：
+
+```sql
+-- Oracle、MySQL 以及 PostgreSQL 实现
+SELECT dept_id, d.dept_name, e.emp_name
+  FROM employee e
+  JOIN department d USING (dept_id);
+```
+
 
 
