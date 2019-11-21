@@ -44,5 +44,5 @@ SELECT d.dept_id, e.dept_id, d.dept_name, e.emp_name
   FULL JOIN employee e ON (e.dept_id = d.dept_id);
 ```
 
-
+MySQL不支持全外连接。 ANSI SQL/86 标准语法不支持全外连接。
 
