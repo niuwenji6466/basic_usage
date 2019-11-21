@@ -123,7 +123,7 @@ SELECT LEN('数据库') AS LEN,
 LEN|DATALENGTH|
 ---|----------|
   3|         6|
-  
+
 #字符串“数据库”在“ChinesePRCCIAIWS”字符集中占用 6 个字节，因为每个汉字占用 2 个字节。
 ```
 
@@ -141,7 +141,7 @@ SELECT emp_name, SUBSTRING(emp_name, 1, 1)
 SELECT emp_name, SUBSTR(emp_name, 1, 1)
   FROM employee
  WHERE emp_id = 1;
- 
+
  #函数中的第二个参数表示子串的起始位置，第三个参数表示子串的长度。以上查询返回了员工姓名中的第一个字符
  #在 Oracle 和 MySQL 中，起始位置可以是负数，表示从右往左计算起始位置。
 ```
@@ -158,6 +158,30 @@ SELECT TRIM('-' FROM '--S-Q-L--'), TRIM('  S-Q-L  ')
 TRIM('-' FROM '--S-Q-L--')|TRIM('  S-Q-L  ')|
 --------------------------|-----------------|
 S-Q-L                     |S-Q-L            |
+
+#第一个 TRIM 函数删除了两端的“-”；第二个 TRIM 删除了两端的空白字符。
+#另外，LTRIM 函数可以用于删除字符串左侧的字符，RTRIM 函数可以用于删除字符串右侧的字符。
+```
+
+### 查找与替换 {#-6}
+
+INSTR 函数用于在字符串中查找并返回子串的位置，没有找到时返回 0。REPLACE 函数用于替换字符串中的子串。以下是各种数据库中的具体实现：
+
+```sql
+-- Oracle 和 MySQL 实现
+SELECT email, INSTR(email, '@'), REPLACE(email, '@', '.')
+  FROM employee
+ WHERE emp_id = 1;
+
+-- SQL Server 实现
+SELECT email, PATINDEX('%@%', email), REPLACE(email, '@', '.')
+  FROM employee
+ WHERE emp_id = 1;
+
+-- PostgreSQL 实现
+SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
+  FROM employee
+ WHERE emp_id = 1;
 ```
 
 
