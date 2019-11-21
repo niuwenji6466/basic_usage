@@ -55,3 +55,7 @@ INSERT INTO t_case(sname, cname, score) VALUES ('王五', '英语', 82);
 
 ![](/assets/20190724193652245.png)
 
+每个学生的每科成绩都是一行数据。我们利用 CASE 表达式将其转换为按列显示的形式，最终的结果如下：
+
+![](/assets/20190724193935532.png)
+
