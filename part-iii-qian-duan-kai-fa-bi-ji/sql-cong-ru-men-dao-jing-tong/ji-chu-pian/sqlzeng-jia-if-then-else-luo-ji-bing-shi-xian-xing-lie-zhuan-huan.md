@@ -109,7 +109,15 @@ SELECT emp_name,
 
 搜索 CASE 表达式通常用于处理更加复杂的逻辑条件，以下示例基于员工的月薪将他们的收入分为“高”、“中”、“低”三个等级：
 
+```sql
+SELECT emp_name, salary,
+       CASE 
+         WHEN salary < 10000  THEN '低收入'
+         WHEN salary < 20000  THEN '中收入'
+         ELSE '高收入'
+       END AS grade
+  FROM employee;
 ```
 
-```
+
 
