@@ -79,5 +79,7 @@ S-Q-L|
 #Oracle 和 PostgreSQL 使用 || 连接字符串，SQL Server 使用 + 连接字符串
 ```
 
+### 字符串长度 {#-3}
+
 
 
