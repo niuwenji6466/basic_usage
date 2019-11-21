@@ -9,6 +9,7 @@
       * [如何实现排行榜和前端分页效果](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian/ru-he-shi-xian-pai-xing-bang-he-qian-duan-fen-ye-xiao-guo.md)
       * [函数](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian/han-shu.md)
       * [SQL增加IF-THEN\_ELSE逻辑并实现行列转换](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian/sqlzeng-jia-if-then-else-luo-ji-bing-shi-xian-xing-lie-zhuan-huan.md)
+      * [分组统计](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/ji-chu-pian/fen-zu-tong-ji.md)
     * [进阶篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/jin-jie-pian.md)
     * [开发篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/kai-fa-pian.md)
     * [拓展篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/tuo-zhan-pian.md)
