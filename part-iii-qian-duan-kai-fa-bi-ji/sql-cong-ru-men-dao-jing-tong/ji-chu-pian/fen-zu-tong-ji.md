@@ -125,9 +125,17 @@ SELECT dept_id, emp_name, AVG(salary)
 
 以上语句会返回一个错误：字段 emp\_name 没有出现在 GROUP BY 子句或者聚合函数中。原因在于该查询按照部门进行分组，但是每个部门包含多个员工；因此无法确定需要显示哪个员工的姓名。这是一个逻辑上的错误，而不是数据库实现的问题
 
-
-
 ### 分组后的过滤 {#-7}
+
+我们知道 WHERE 条件可以用于过滤表中的数据。但是如果需要针对分组之后的结果进行过滤，是不是也可以使用 WHERE 实现呢？以下示例按照部门统计平均月薪，然后选择平均月薪大于 10000 的数据：
+
+```sql
+-- 使用 WHERE 执行分组后的过滤
+SELECT dept_id, AVG(salary)
+  FROM employee
+ WHERE AVG(salary) > 10000
+ GROUP BY dept_id;
+```
 
 
 
