@@ -197,5 +197,13 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
 
 ### 日期时间函数 {#-1}
 
+#### 返回当前日期时间 {#-2}
+
+CURRENT\_DATE、CURRENT\_TIME 以及 CURRENT\_TIMESTAMP 函数分别返回数据库系统当前的日期、时间以及时间戳。以下是不同数据库中的实现示例：
+
+```
+
+```
+
 
 
