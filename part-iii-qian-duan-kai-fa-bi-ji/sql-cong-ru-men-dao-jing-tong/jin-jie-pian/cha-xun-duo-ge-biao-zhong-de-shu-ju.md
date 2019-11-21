@@ -63,5 +63,5 @@ SELECT dept_id, d.dept_name, e.emp_name
   JOIN department d USING (dept_id);
 ```
 
-
+其中，USING 表示使用两个表中的公共字段（dept\_id）进行等值连接。查询语句中的公共字段不需要添加表名限定。该语句的结果与上文中的内连接查询示例相同。
 
