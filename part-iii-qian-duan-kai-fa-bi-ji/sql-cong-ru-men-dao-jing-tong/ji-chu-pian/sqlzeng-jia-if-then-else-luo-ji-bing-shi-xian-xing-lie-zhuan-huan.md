@@ -85,5 +85,5 @@ CASE
 END
 ```
 
-
+按照顺序依次计算每个分支中的条件（condition1，condition2，…），找到第一个结果为真的分支并返回相应的结果（result1，result2，…）；如果没有任何条件为真，返回 ELSE 中的默认结果；如果此时没有指定 ELSE，返回 NULL 值。
 
