@@ -419,6 +419,8 @@ SELECT AVG(bonus)
 AVG(bonus) |
 -----------|
 6388.888889|
+
+#给出 AVG 函数的完整语法AVG( [ALL | DISTINCT] expression)ALL 表示统计时不排除重复值。这是默认行为，通常省略
 ```
 
 
