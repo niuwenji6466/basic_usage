@@ -360,5 +360,14 @@ SELECT COUNT(*) AS "员工数量"
 
 我们先来看一下 COUNT 函数加上 DISTINCT 之后的效果：
 
+```sql
+SELECT COUNT(sex), COUNT(DISTINCT sex)
+  FROM employee;
+
+COUNT(sex)|COUNT(DISTINCT sex)|
+----------|-------------------|
+        25|                  2|
+```
+
 
 
