@@ -191,6 +191,6 @@ SELECT email, POSITION('@' IN email), REPLACE(email, '@', '.')
 在数据库中，日期时间类型存在 3 种形式：
 
 * DATE，日期类型，包含年、月、日。可以用于存储出生日期、入职日期等。
-
+* 
 
 
