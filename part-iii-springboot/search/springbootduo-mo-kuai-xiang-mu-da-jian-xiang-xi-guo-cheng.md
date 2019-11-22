@@ -46,5 +46,7 @@
 
 ![](/assets/QQ截图20191122095228.png)
 
-![](/assets/QQ截图20191122095240.png)创建好了 demo-base 子项目 ， 为子工程 demo-base 生命父工程以及 为 父工程声明子 Module（在 demo 和 demo-base 的 pom 文件中添加如下代码）
+![](/assets/QQ截图20191122095240.png)创建好了 demo-base 子项目 ， 为子工程 demo-base 生命父工程以及 为 父工程声明子 Module（在 demo 和 demo-base 的 pom 文件中添加如下代码）
+
+在 demo-base 中 声明父工程， 注意：此时demo-base继承的是 SpringBoot提供的父工程， 需要修改&lt;parent&gt;&lt;/parent&gt;中的版本信息， 修改成父项目 demo 的版本信息（直接将父项目 demo 的pom文件 中的版本信息复制粘贴到 mode-base             中即可）
 
