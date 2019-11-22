@@ -61,5 +61,13 @@
 </parent>
 ```
 
+--&gt;声明子 Module
+
+```xml
+<modules>
+         <module>demo-base</module>
+</modules>
+```
+
 
 
