@@ -37,3 +37,18 @@ Integer findDockPointsByTime(Date date1,Date date2,String number,String type);
 
 4.原生sql查询部分字段
 
+```java
+/**
+ *驾照某一时间段处理的车辆信息 
+ * 
+ * @param date1 开始时间 
+ * @param date2 结束时间 
+ * @param number 证件编号 
+ * @param type 证件类型 
+ * @return  处理过的车辆信息 */
+@Query(value="select distinct(o.plate_number),(o.plate_number_type) from winstar_orders o where o.create_time between ?1 and ?2  and o.number=?3 and o.type=?4", nativeQuery = true)
+List<Object[]> findPlateNumberAndPlateNumberTypeByCertificate(Date date1, Date date2, String number, String type);
+```
+
+
+
