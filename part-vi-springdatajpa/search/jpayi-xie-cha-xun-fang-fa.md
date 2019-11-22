@@ -50,5 +50,5 @@ Integer findDockPointsByTime(Date date1,Date date2,String number,String type);
 List<Object[]> findPlateNumberAndPlateNumberTypeByCertificate(Date date1, Date date2, String number, String type);
 ```
 
-
+5.参数是集合的
 
