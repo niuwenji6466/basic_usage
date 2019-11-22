@@ -263,7 +263,7 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
 
 ```xml
 <dependencies>
- 
+
         <!-- 添加 demo-dao 的依赖 -->
         <dependency>
             <groupId>demo</groupId>
@@ -271,12 +271,12 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
- 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
- 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -288,9 +288,8 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
 添加依赖信息后的 demo-web 的依赖信息
 
 ```xml
-
 <dependencies>
- 
+
         <!-- 添加 demo-service 的依赖 -->
         <dependency>
             <groupId>demo</groupId>
@@ -298,18 +297,69 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
- 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
- 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 </dependencies>
+```
+
+\(6\)第五步 编写测试代码
+
+编写好代码后三个模块的目录结构（demo-base还未用上， 但实际项目中很有用）：
+
+![](/assets/20181014140918773.jpg)
+
+下面贴上代码：
+
+给demo-dao 添加
+
+Demo.java
+
+```java
+
+package demo.demodao;
+ 
+import javax.persistence.*;
+ 
+@Entity(name = "demo")  //设置实体名， 在数据库中是表名
+public class Demo {
+ 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)  //设置自动增长
+    @Column(name = "id")
+    private Integer id;
+    
+ 
+    @Column(name = "name") //设置数据库字段名    
+    private String name;
+ 
+    @Column(name = "id")
+    private Integer id;
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public Integer getId() {
+        return id;
+    }
+ 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+}
 ```
 
 
