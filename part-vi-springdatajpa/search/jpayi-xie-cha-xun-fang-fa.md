@@ -11,9 +11,20 @@ Orders findBySerialNumber(String serialNumber);
 ```
 
 1. 带参数hql语句查询
-2. 聚合函数
-3. 原生sql查询部分字段
-4. 参数是集合的
+
+```java
+/**
+ * 根据 publicOpenid 查询 serialNumber集合 
+ * @param publicOpenid  
+ * @return 
+ */
+@Query("select o.serialNumber  from Orders o where o.publicOpenid = ?1 order by o.createTime desc ")
+List<String> findSerialNumberByPublicOpenId(String publicOpenid);
+```
+
+1. 聚合函数
+2. 原生sql查询部分字段
+3. 参数是集合的
 
 
 
