@@ -236,9 +236,8 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
 添加依赖信息后的 demo-dao 的依赖信息
 
 ```xml
-
 <dependencies>
- 
+
         <!-- 添加 demo-base 的依赖 -->
         <dependency>
             <groupId>demo</groupId>
@@ -246,10 +245,63 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+</dependencies>
+```
+
+添加依赖信息后的 demo-service 的依赖信息
+
+```xml
+<dependencies>
+ 
+        <!-- 添加 demo-dao 的依赖 -->
+        <dependency>
+            <groupId>demo</groupId>
+            <artifactId>demo-dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
  
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+</dependencies>
+```
+
+添加依赖信息后的 demo-web 的依赖信息
+
+```xml
+
+<dependencies>
+ 
+        <!-- 添加 demo-service 的依赖 -->
+        <dependency>
+            <groupId>demo</groupId>
+            <artifactId>demo-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
  
         <dependency>
