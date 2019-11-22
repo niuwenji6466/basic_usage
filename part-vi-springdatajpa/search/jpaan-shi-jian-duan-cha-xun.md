@@ -3,18 +3,24 @@
 JpaSpecificationExecutor 接口提供很多条件查询方法:
 
 ```java
-
 public interface JpaSpecificationExecutor<T> {
     T findOne(Specification<T> var1);
- 
+
     List<T> findAll(Specification<T> var1);
- 
+
     Page<T> findAll(Specification<T> var1, Pageable var2);
- 
+
     List<T> findAll(Specification<T> var1, Sort var2);
- 
+
     long count(Specification<T> var1);
-}
+
+}
+```
+
+比如方法:
+
+```java
+List<T> findAll(Specification<T> var1);
 ```
 
 
