@@ -23,5 +23,37 @@ public interface JpaSpecificationExecutor<T> {
 List<T> findAll(Specification<T> var1);
 ```
 
+这是项目中的示例：
+
+```
+
+ @Override
+    public List<AdviceEntity> serach(String serach, String stime, String etime) {
+        List<AdviceEntity> resultList = null;
+        Specification<AdviceEntity> querySpecifi = new Specification<AdviceEntity>() {
+            @Override
+            public Predicate toPredicate(Root<AdviceEntity> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder cb) {
+                List<Predicate> predicates = new ArrayList<>();
+                if (StringUtils.isNotBlank(stime)) {
+                    //大于或等于传入时间
+                    predicates.add(cb.greaterThanOrEqualTo(root.get("commitTime").as(String.class), stime));
+                }
+                if (StringUtils.isNotBlank(etime)) {
+                    //小于或等于传入时间
+                    predicates.add(cb.lessThanOrEqualTo(root.get("commitTime").as(String.class), etime));
+                }
+                if (StringUtils.isNotBlank(serach)) {
+                    //模糊查找
+                    predicates.add(cb.like(root.get("name").as(String.class), "%" + serach + "%"));
+                }
+                // and到一起的话所有条件就是且关系，or就是或关系
+                return cb.and(predicates.toArray(new Predicate[predicates.size()]));
+            }
+        };
+        resultList = this.adviceDao.findAll(querySpecifi);
+        return resultList;
+    }
+```
+
 
 
