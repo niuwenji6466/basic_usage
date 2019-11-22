@@ -35,5 +35,5 @@ List<String> findSerialNumberByPublicOpenId(String publicOpenid);
 Integer findDockPointsByTime(Date date1,Date date2,String number,String type);
 ```
 
-
+4.原生sql查询部分字段
 
