@@ -36,7 +36,7 @@
 
 ![](/assets/2018101317431252.png)
 
-（2）第二步， 创建子 Module （demo-base， demo-dao,  demo-service 和 demo-web）  先创建demo-base子工程
+（2）第二步， 创建子 Module （demo-base， demo-dao,  demo-service 和 demo-web）  先创建demo-base子工程
 
 ![](/assets/QQ截图20191122095018.png)
 
@@ -46,5 +46,5 @@
 
 ![](/assets/QQ截图20191122095228.png)
 
-![](/assets/QQ截图20191122095240.png)
+![](/assets/QQ截图20191122095240.png)创建好了 demo-base 子项目 ， 为子工程 demo-base 生命父工程以及 为 父工程声明子 Module（在 demo 和 demo-base 的 pom 文件中添加如下代码）
 
