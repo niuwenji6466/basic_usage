@@ -50,3 +50,16 @@
 
 在 demo-base 中 声明父工程， 注意：此时demo-base继承的是 SpringBoot提供的父工程， 需要修改&lt;parent&gt;&lt;/parent&gt;中的版本信息， 修改成父项目 demo 的版本信息（直接将父项目 demo 的pom文件 中的版本信息复制粘贴到 mode-base中即可）
 
+![](/assets/20181014083110458.jpg)--&gt;声明父工程
+
+```xml
+<parent>
+        <groupId>demo</groupId>
+        <artifactId>demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
+</parent>
+```
+
+
+
