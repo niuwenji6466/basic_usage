@@ -12,5 +12,16 @@ Orders findBySerialNumber(String serialNumber);
 
 2.带参数hql语句查询
 
+```java
+/**
+ * 根据 publicOpenid 查询 serialNumber集合 
+ * @param publicOpenid 
+ * @return 
+ */
+@Query("select o.serialNumber  from Orders o where o.publicOpenid = ?1 order by o.createTime desc ")
+List<String> findSerialNumberByPublicOpenId(String publicOpenid);
+
+```
+
 
 
