@@ -8,8 +8,9 @@
  * @return 订单
  */
 Orders findBySerialNumber(String serialNumber);
-
 ```
+
+2.带参数hql语句查询
 
 
 
