@@ -20,8 +20,7 @@ Orders findBySerialNumber(String serialNumber);
  */
 @Query("select o.serialNumber  from Orders o where o.publicOpenid = ?1 order by o.createTime desc ")
 List<String> findSerialNumberByPublicOpenId(String publicOpenid);
-
 ```
 
-
+3.聚合函数
 
