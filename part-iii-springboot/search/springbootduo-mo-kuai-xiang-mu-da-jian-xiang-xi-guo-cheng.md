@@ -129,23 +129,23 @@
  </project>
 ```
 
-修改后的 demo-base 的 pom 文件 :
+修改后的 demo-base 的 pom 文件 :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
+
     <!--  demo-base 的版本信息 -->
     <groupId>demo</groupId>
     <artifactId>demo-base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
- 
+
     <name>demo-base</name>
     <description>Demo project for Spring Boot</description>
- 
+
     <!-- 声明父项目 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -153,13 +153,13 @@
         <version>1.5.16.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
- 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
- 
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -169,7 +169,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
- 
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -181,7 +181,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
- 
+
     <build>
         <plugins>
             <plugin>
@@ -190,10 +190,12 @@
             </plugin>
         </plugins>
     </build>
- 
- 
+
+
 </project>
 ```
 
+ 创建demo-dao, demo-service  创建方法一样， 这里只演示demo-dao的创建:
 
+![](/assets/QQ截图20191122101116.png)![](/assets/QQ截图20191122101128.png)
 
