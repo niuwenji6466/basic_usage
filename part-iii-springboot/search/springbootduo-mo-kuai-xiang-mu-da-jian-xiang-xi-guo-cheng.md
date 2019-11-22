@@ -231,5 +231,34 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
 
 ![](/assets/20181014095129942.png)
 
-\(5\)第四步 在 demo-dao 中添加 demo-base 的依赖信息， 在 demo-service 中添加 demo-dao 的依赖信息， 在 demo-web 中添加 demo-service 的依赖信息,  依赖信息添加到 各 pom 文件下的  &lt;dependencies&gt; &lt;/dependencies&gt;节点下
+\(5\)第四步 在 demo-dao 中添加 demo-base 的依赖信息， 在 demo-service 中添加 demo-dao 的依赖信息， 在 demo-web 中添加 demo-service 的依赖信息,  依赖信息添加到 各 pom 文件下的  &lt;dependencies&gt; &lt;/dependencies&gt;节点下
+
+添加依赖信息后的 demo-dao 的依赖信息
+
+```xml
+
+<dependencies>
+ 
+        <!-- 添加 demo-base 的依赖 -->
+        <dependency>
+            <groupId>demo</groupId>
+            <artifactId>demo-base</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+</dependencies>
+```
+
+
 
