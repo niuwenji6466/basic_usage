@@ -52,3 +52,19 @@ List<Object[]> findPlateNumberAndPlateNumberTypeByCertificate(Date date1, Date d
 
 5.参数是集合的
 
+```java
+/**
+ * 根据机构id（in）、状态、报案时间（between）查询事故列表  (现场报案的)
+ *
+ * @param organizationIds 机构id 列表
+ * @param status 状态
+ * @param date1 开始时间
+ * @param date2 结束时间
+ * @return
+ */
+@Query("select a from Accident a where a.organizationId in (?1) and a.status = ?2 and a.createTime between ?3 and ?4 and a.accidentType='1'")
+List<Accident> findByOrganizationIdInAndStatusAndCreateTimeBetween(List<String> organizationIds, int status, Date date1,Date date2);
+```
+
+
+
