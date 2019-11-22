@@ -324,43 +324,180 @@ demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplic
 Demo.java
 
 ```java
-
 package demo.demodao;
- 
+
 import javax.persistence.*;
- 
+
 @Entity(name = "demo")  //设置实体名， 在数据库中是表名
 public class Demo {
- 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)  //设置自动增长
     @Column(name = "id")
     private Integer id;
-    
- 
+
+
     @Column(name = "name") //设置数据库字段名    
     private String name;
- 
+
     @Column(name = "id")
     private Integer id;
- 
+
     public String getName() {
         return name;
     }
- 
+
     public void setName(String name) {
         this.name = name;
     }
- 
+
     public Integer getId() {
         return id;
     }
- 
+
     public void setId(Integer id) {
         this.id = id;
     }
 }
 ```
 
+DemoRepository.java 
 
+```java
+package demo.demodao;
+ 
+import org.springframework.data.jpa.repository.JpaRepository;
+ 
+public interface DemoRepository extends JpaRepository<Demo, Integer> {
+ 
+}
+```
+
+DemoService.java
+
+```java
+
+package demo.demoservice;
+ 
+import demo.demodao.Demo;
+ 
+import java.util.List;
+ 
+ 
+public interface DemoService {
+ 
+    Demo addOne(Demo demo);
+ 
+}
+```
+
+DemoServiceImpl.java
+
+```java
+
+package demo.demoservice.impl;
+ 
+import demo.demodao.Demo;
+import demo.demodao.DemoRepository;
+import demo.demoservice.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+ 
+@Service
+public class DemoServiceImpl implements DemoService {
+ 
+    @Autowired
+    private DemoRepository demoRepository;
+ 
+    @Override
+    public Demo addOne(Demo demo) {
+        return this.demoRepository.save(demo);
+    }
+}
+```
+
+DemoController.java  
+
+```java
+
+package demo.demoweb;
+ 
+import demo.demodao.Demo;
+import demo.demoservice.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+ 
+@Controller
+public class DemoController {
+ 
+    @Autowired
+    private DemoService demoService;
+ 
+    @ResponseBody  // 返回 Json 数据
+    @GetMapping("add")
+    private Demo add(){
+        Demo demo = new Demo();
+        demo.setName("姓名");
+        demo.setId(1);
+        return demoService.addOne(demo); // 成功返回 保存后的 demo
+    }
+ 
+
+}
+```
+
+第六步： 创建数据库， 修改配置文件
+
+ 创建输数据库 test
+
+![](/assets/20181014141543318.png)
+
+ 修改配置文件： 将 demo-web Resource目录下 application.properties 文件名改为 applicatin.yml并添加以下内容：
+
+```
+spring:
+  datasource:
+    # jdbc:mysql://localhost:3306/test 数据库地址
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root # 数据库用户名
+    password: xxxxxx  # 数据库密码
+    driver-class-name: com.mysql.jdbc.Driver  # 数据库驱动
+ 
+  jpa:
+      hibernate:
+        ddl-auto: create-drop  #  create-drop  如果实体对应的表已存在，先删除再创建，否则直接创建
+        #  ！！！注意： 第一次运行时可设置为 create-drop, 这样就不需要手动创建数据库表, 但是后面运行务必设置为none
+```
+
+![](/assets/20181014153348119.png)
+
+\(7\) 第七步： 大功告成， 运行项目
+
+![](/assets/20181014144051432.png)
+
+直接运行会报错
+
+![](/assets/20181014144300454.png)
+
+### **已解决：将启动类 DemoApplication 移动到 demo 包下**
+
+
+
+![](/assets/20181014145602218.png)
+
+移动：
+
+
+
+![](/assets/QQ截图20191122134712.png)
+
+![](/assets/QQ截图20191122134723.png)
+
+![](/assets/QQ截图20191122134734.png)
+
+### **运行成功！**
+
+![](/assets/QQ截图20191122134936.png)
 
