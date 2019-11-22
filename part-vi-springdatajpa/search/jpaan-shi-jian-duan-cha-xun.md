@@ -25,8 +25,7 @@ List<T> findAll(Specification<T> var1);
 
 这是项目中的示例：
 
-```
-
+```java
  @Override
     public List<AdviceEntity> serach(String serach, String stime, String etime) {
         List<AdviceEntity> resultList = null;
