@@ -10,7 +10,7 @@
 Orders findBySerialNumber(String serialNumber);
 ```
 
-    2.带参数hql语句查询
+
 
 ```java
 /**
@@ -23,8 +23,8 @@ List<String> findSerialNumberByPublicOpenId(String publicOpenid);
 ```
 
 1. 聚合函数
-2. 3. 原生sql查询部分字段
-4. 参数是集合的
+2. 1. 原生sql查询部分字段
+3. 参数是集合的
 
 
 
