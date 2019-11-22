@@ -207,3 +207,29 @@
 
 ![](/assets/20181014085229751.png)
 
+\(4\) 第三步 保留demo-web的启动类 和 配置文件， 其他项目的启动类都删除， 整个项目只需要一个启动类和一个配置文件 
+
+
+
+demo-base:    /demo/demo-base/src/main/java/demobase/demo/DemoBaseApplication.java   删除
+
+
+
+                      /demo/demo-base/src/main/java/resource/\*   删除
+
+
+
+demo-dao:    /demo/demo-dao/src/main/java/demodao/demo/DemoDaoApplication.java   删除
+
+
+
+                     /demo/demo-dao/src/main/java/resource/\*   删除
+
+
+
+demo-service:    /demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplication.java   删除
+
+
+
+                          /demo/demo-service/src/main/java/resource/\*   删除
+
