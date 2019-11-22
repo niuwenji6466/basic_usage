@@ -24,3 +24,16 @@ List<String> findSerialNumberByPublicOpenId(String publicOpenid);
 
 3.聚合函数
 
+```java
+/**
+ *查询驾照某一时间段的扣分总数 
+ * @param date1 开始日期 
+ * @param date2 截止日期 
+ * @return 扣分总数 
+ */
+@Query("select sum(dockPoints) from Orders o where o.createTime between ?1 and ?2  and o.number=?3 and o.type=?4")
+Integer findDockPointsByTime(Date date1,Date date2,String number,String type);
+```
+
+
+
