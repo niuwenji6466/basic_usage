@@ -16,6 +16,8 @@
     * [开发篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/kai-fa-pian.md)
     * [拓展篇](part-iii-qian-duan-kai-fa-bi-ji/sql-cong-ru-men-dao-jing-tong/tuo-zhan-pian.md)
 * [PART IV - SpringBoot](part-iii-springboot.md)
+  * [search](part-iii-springboot/search.md)
+    * [SpringBoot多模块项目搭建详细过程](part-iii-springboot/search/springbootduo-mo-kuai-xiang-mu-da-jian-xiang-xi-guo-cheng.md)
 * [PART V - VUE](part-v-vue.md)
   * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
   * [1.2 组件通信的几种方式](part-v-vue/12-zu-jian-tong-xin-de-ji-zhong-fang-shi.md)
