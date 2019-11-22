@@ -211,7 +211,7 @@
 
 
 
-demo-base:    /demo/demo-base/src/main/java/demobase/demo/DemoBaseApplication.java   删除
+demo-base:/demo/demo-base/src/main/java/demobase/demo/DemoBaseApplication.java   删除
 
 
 
@@ -219,7 +219,7 @@ demo-base:    /demo/demo-base/src/main/java/demobase/demo/DemoBaseApplication.
 
 
 
-demo-dao:    /demo/demo-dao/src/main/java/demodao/demo/DemoDaoApplication.java   删除
+demo-dao:/demo/demo-dao/src/main/java/demodao/demo/DemoDaoApplication.java   删除
 
 
 
@@ -227,7 +227,7 @@ demo-dao:    /demo/demo-dao/src/main/java/demodao/demo/DemoDaoApplication.java
 
 
 
-demo-service:    /demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplication.java   删除
+demo-service:/demo/demo-service/src/main/java/demoservice/demo/DemoServiceApplication.java   删除
 
 
 
