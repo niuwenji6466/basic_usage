@@ -23,4 +23,5 @@
   * [search](part-vi-springdatajpa/search.md)
     * [jpa一些查询方法](part-vi-springdatajpa/search/jpayi-xie-cha-xun-fang-fa.md)
     * [jpa按时间段查询](part-vi-springdatajpa/search/jpaan-shi-jian-duan-cha-xun.md)
+* PART VII - 微信小程序
 
