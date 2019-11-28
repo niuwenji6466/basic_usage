@@ -45,7 +45,8 @@ public class OperaSinger implements Singer {
  }
 ```
 
-I am singing with DIO voice: song lyrics. 原因很简单，就是 OperaSinger 这个类上面根本没有加上注解@Copmonent 或者 @Service, 所以spring 注入的时候，只能找到 MetalSinger 这个实现类. 所以才有这个结果。但是如果一旦 OperaSinger 这个类加上了@Copmonent 或者 @Service 注解，有趣的事情就会发生，你会发现一个错误的结果或异常: 
+I am singing with DIO voice: song lyrics. 原因很简单，就是 OperaSinger 这个类上面根本没有加上注解@Copmonent 或者 @Service, 所以spring 注入的时候，只能找到 MetalSinger 这个实现类. 所以才有这个结果  
+。但是如果一旦 OperaSinger 这个类加上了@Copmonent 或者 @Service 注解，有趣的事情就会发生，你会发现一个错误的结果或异常:
 
 org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type \[main.service.Singer\] is defined: expected single matching bean but found 2: metalSinger,operaSinger
 
@@ -68,6 +69,44 @@ public class OperaSinger implements Singer{
 “I am singing in Bocelli voice: song lyrics”， 用@Primary 告诉spring 在犹豫的时候优先选择哪一个具体的实现。
 
 二、用@Qualifier这个注解来解决问题
+
+将上面的两个类改为如下:
+
+```
+@Component // 加注解，让spring识别
+@Qualifier("metalSinger")
+public class MetalSinger implements Singer{
+
+    @Override
+    public String sing(String lyrics) {
+        return "I am singing with DIO voice: "+lyrics;
+    }
+}
+
+@Component
+@Qualifier("opreaSinger")
+public class OperaSinger implements Singer {
+    @Override
+    public String sing(String lyrics) {
+        return "I am singing in Bocelli voice: "+lyrics;
+    }
+}
+```
+
+```
+@Component
+public class SingerService {
+    private static final Logger logger = LoggerFactory.getLogger(SingerService.class);
+
+    @Autowired
+    private Singer singer;
+
+    @Qualifier("opreaSinger")
+    public String sing(){
+        return singer.sing("song lyrics");
+    }
+}
+```
 
 
 
