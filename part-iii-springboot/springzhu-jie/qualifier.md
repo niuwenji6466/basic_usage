@@ -19,14 +19,14 @@ public class EmployeeServiceImpl1 implements EmployeeService {
 @Controller
 @RequestMapping("/emplayee.do")
 public class EmployeeInfoControl {
-    
+
     @Autowired
     @Qualifier("b")
     EmployeeService employeeService;
-    
+
     @RequestMapping(params = "method=showEmplayeeInfo")
     public void showEmplayeeInfo(HttpServletRequest request, HttpServletResponse response, EmployeeDto dto) {
-        #略
+        //略
     }
 }
 ```
