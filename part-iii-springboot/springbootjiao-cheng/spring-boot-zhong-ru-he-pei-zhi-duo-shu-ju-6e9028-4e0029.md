@@ -96,5 +96,7 @@ spring:
       password: root
 ```
 
+## 3、编写数据源配置对象，MasterDataSourceConfig ，SlaveDataSourceConfig {#h2_3}
+
 
 
