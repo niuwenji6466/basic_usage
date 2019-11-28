@@ -2,14 +2,14 @@
 
 ```
 @Service("a")
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImplOne implements EmployeeService {
     public EmployeeDto getEmployeeById(Long id) {
         return new EmployeeDto();
     }
 }
 
 @Service("b")
-public class EmployeeServiceImpl1 implements EmployeeService {
+public class EmployeeServiceImplTwo implements EmployeeService {
     public EmployeeDto getEmployeeById(Long id) {
         return new EmployeeDto();
     }
