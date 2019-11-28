@@ -18,6 +18,8 @@
 * [PART IV - SpringBoot](part-iii-springboot.md)
   * [search](part-iii-springboot/search.md)
     * [SpringBoot多模块项目搭建详细过程](part-iii-springboot/search/springbootduo-mo-kuai-xiang-mu-da-jian-xiang-xi-guo-cheng.md)
+  * [SpringBoot教程](part-iii-springboot/springbootjiao-cheng.md)
+    * [Spring Boot 中如何配置多数据源\(一\)](part-iii-springboot/springbootjiao-cheng/spring-boot-zhong-ru-he-pei-zhi-duo-shu-ju-6e9028-4e0029.md)
 * [PART V - VUE](part-v-vue.md)
   * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
   * [1.2 组件通信的几种方式](part-v-vue/12-zu-jian-tong-xin-de-ji-zhong-fang-shi.md)
