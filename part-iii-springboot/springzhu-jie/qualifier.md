@@ -21,7 +21,7 @@ public class EmployeeServiceImplTwo implements EmployeeService {
 public class EmployeeInfoControl {
 
     @Autowired
-    @Qualifier("b")
+    @Qualifier("two")
     EmployeeService employeeService;
 
     @RequestMapping(params = "method=showEmplayeeInfo")
