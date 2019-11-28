@@ -98,5 +98,205 @@ spring:
 
 ## 3、编写数据源配置对象，MasterDataSourceConfig ，SlaveDataSourceConfig {#h2_3}
 
+```
+@Configuration
+@EnableConfigurationProperties
+public class MasterDataSourceConfig {
+    @Bean(name = "masterDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.master")
+    @Primary
+    public DataSource masterDataSource() {
+        DruidDataSource masterDataSource = new DruidDataSource();
+        masterDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        masterDataSource.setTestWhileIdle(true);
+        masterDataSource.setTestOnBorrow(false);
+        masterDataSource.setTestOnReturn(false);
+        masterDataSource.setMaxWait(15000);
+        masterDataSource.setTimeBetweenEvictionRunsMillis(60000);
+        masterDataSource.setPoolPreparedStatements(false);
+        masterDataSource.setValidationQuery("select 1 ");
+        masterDataSource.setInitialSize(20);
+        masterDataSource.setMaxActive(80);
+        return masterDataSource;
+    }
+
+    @Bean(name = "masterSqlSessionFactory")
+    @Primary
+    public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setDataSource(dataSource);
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/master/*.xml"));
+        return bean.getObject();
+    }
+
+    @Bean(name = "masterTransactionManager")
+    @Primary
+    public DataSourceTransactionManager masterTransactionManager(@Qualifier("masterDataSource") DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
+
+    @Bean(name = "masterSqlSessionTemplate")
+    @Primary
+    public SqlSessionTemplate masterSqlSessionTemplate(@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(sqlSessionFactory);
+    }
+}
+```
+
+```
+@Configuration
+@EnableConfigurationProperties
+public class SlaveDataSourceConfig {
+    @Bean(name = "slaveDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.slave")
+    public DataSource slaveDataSource() {
+        DruidDataSource queryDataSource = new DruidDataSource();
+        queryDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        queryDataSource.setTestWhileIdle(true);
+        queryDataSource.setTestOnReturn(false);
+        queryDataSource.setTestOnBorrow(false);
+        queryDataSource.setMaxWait(15000);
+        queryDataSource.setTimeBetweenEvictionRunsMillis(60000);
+        queryDataSource.setPoolPreparedStatements(false);
+        queryDataSource.setValidationQuery("select 1 ");
+        queryDataSource.setMaxActive(80);
+        queryDataSource.setInitialSize(20);
+        return queryDataSource;
+    }
+
+    @Bean(name = "slaveSqlSessionFactory")
+    public SqlSessionFactory slaveSqlSessionFactory(@Qualifier("slaveDataSource") DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setDataSource(dataSource);
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/master/*.xml"));
+        return bean.getObject();
+    }
+
+    @Bean(name = "slaveTransactionManager")
+    public DataSourceTransactionManager slaveTransactionManager(@Qualifier("slaveDataSource") DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
+
+    @Bean(name = "slaveSqlSessionTemplate")
+    public SqlSessionTemplate slaveSqlSessionTemplate(@Qualifier("slaveSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+        return new SqlSessionTemplate(sqlSessionFactory);
+    }
+}
+```
+
+## 4、创建domain {#h2_4}
+
+```
+@Data
+public class Book {
+    private Integer id;
+    private String bookName;
+    private String author;
+    private String isbn;
+}
+```
+
+## 5、编写mapper.xml在resources文件夹下创建文件夹/mapper/master/ {#h2_5}
+
+#### 创建名为`BookMasterMapper.xml`的mapper文件，内容如下： {#h4_7}
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Book">
+    <sql id="Query_Column">
+        id as id,
+        book_name as bookName,
+        author as author,
+        isbn as isbn
+    </sql>
+    <insert id="save" parameterType="com.quick.domain.Book">
+        insert into book (book_name, author,isbn)
+        values (#{bookName,jdbcType=VARCHAR},
+         #{author,jdbcType=VARCHAR},
+        #{isbn,jdbcType=VARCHAR})
+    </insert>
+</mapper>
+```
+
+## 6、编写对应的mapper类 {#h2_8}
+
+```
+@Repository
+public class BookMasterMapper {
+    @Resource(name = "masterSqlSessionTemplate")
+    private SqlSessionTemplate sqlClient;
+
+    public long save(Book book) {
+        return sqlClient.insert("Book.save",book);
+    }
+}
+```
+
+```
+@Repository
+public class BookSlaveMapper {
+    @Resource(name = "slaveSqlSessionTemplate")
+    private SqlSessionTemplate sqlClient;
+
+    public long save(Book book) {
+        return sqlClient.insert("Book.save",book);
+    }
+}
+```
+
+## 7、ok编写测试service {#h2_9}
+
+```
+@Service
+public class BookService {
+    @Resource
+    private BookMasterMapper bookMasterMapper;
+    @Resource
+    private BookSlaveMapper bookSlaveMapper;
+    public void save(Book book){
+        bookMasterMapper.save(book);
+        bookSlaveMapper.save(book);
+    }
+}
+```
+
+#### 注入不同数据源的mapper对象。 {#h4_10}
+
+## 8、启动类编写 {#h2_11}
+
+```
+@SpringBootApplication(exclude = {MybatisAutoConfiguration.class})
+public class AppStart {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AppStart.class, args);
+	}
+}
+```
+
+#### 此处需要去掉mybatis的自动配置 {#h4_12}
+
+## 9、编写单元测试类 {#h2_13}
+
+```
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class QuickMoredatasourceApplicationTests {
+	@Resource
+	private BookService bookService;
+	@Test
+	public void contextLoads() {
+		Book book = new Book();
+		book.setAuthor("wang");
+		book.setBookName("boot");
+		book.setIsbn("1122");
+		bookService.save(book);
+	}
+}
+```
+
+## 10、执行完成看一下数据库数据 {#h2_14}
+
 
 
