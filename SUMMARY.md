@@ -24,6 +24,7 @@
     * [@Resource](part-iii-springboot/springzhu-jie/resource.md)
     * [@Primary](part-iii-springboot/springzhu-jie/primary.md)
     * [@Qualifier](part-iii-springboot/springzhu-jie/qualifier.md)
+    * [@Configurable](part-iii-springboot/springzhu-jie/configurable.md)
 * [PART V - VUE](part-v-vue.md)
   * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
   * [1.2 组件通信的几种方式](part-v-vue/12-zu-jian-tong-xin-de-ji-zhong-fang-shi.md)
