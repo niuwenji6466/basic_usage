@@ -33,7 +33,7 @@
     * [jpa一些查询方法](part-vi-springdatajpa/search/jpayi-xie-cha-xun-fang-fa.md)
     * [jpa按时间段查询](part-vi-springdatajpa/search/jpaan-shi-jian-duan-cha-xun.md)
 * [PART VII - 微信小程序](part-vii-wei-xin-xiao-cheng-xu.md)
-  * 备注
-* PART VIII - SpringCloud
+  * [备注](part-vii-wei-xin-xiao-cheng-xu/bei-zhu.md)
+* [PART VIII - SpringCloud](part-viii-springcloud.md)
   * [备注](bei-zhu.md)
 
