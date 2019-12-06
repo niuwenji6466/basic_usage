@@ -36,6 +36,6 @@
   * [备注](part-vii-wei-xin-xiao-cheng-xu/bei-zhu.md)
 * [PART VIII - SpringCloud](part-viii-springcloud.md)
   * [备注](bei-zhu.md)
-* [PART XI - MyBatis](part-xi-mybatis.md)
-  * 备注
+* [PART IX - MyBatis](part-xi-mybatis.md)
+  * [备注](part-xi-mybatis/bei-zhu.md)
 
