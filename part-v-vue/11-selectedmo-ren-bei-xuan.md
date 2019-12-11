@@ -14,5 +14,31 @@ created:function(){
 }
 ```
 
+```
+data() {
+    return {
+      form: {
+        userName: "",
+        password: "",
+        repassword: "",
+        companyTitle: "",
+        address: "",
+        telephone: "",
+        areaCode: "",
+        areaName: "",
+        type:"",
+        random: ""
+      },
+      typeList: [
+          { value: "DA",label: "日常安全"},
+          { value: "CE",label: "继续教育"}
+      ],
+      areaId: "",
+      area: ["辽宁省", "大连市", "中山区"],
+      randomUrl: this.$config.randomUrl + "/random"
+    };
+  },
+```
+
 
 
