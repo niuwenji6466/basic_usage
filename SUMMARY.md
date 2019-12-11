@@ -28,8 +28,9 @@
 * [PART V - VUE](part-v-vue.md)
   * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
   * [1.2 组件通信的几种方式](part-v-vue/12-zu-jian-tong-xin-de-ji-zhong-fang-shi.md)
-  * 文章
+  * [文章](part-v-vue/wen-zhang.md)
     * [1.1 selected默认备选](part-v-vue/11-selectedmo-ren-bei-xuan.md)
+    * [1.2 export default](part-v-vue/12-export-default.md)
 * [PART VI - SpringDataJPA](part-vi-springdatajpa.md)
   * [search](part-vi-springdatajpa/search.md)
     * [jpa一些查询方法](part-vi-springdatajpa/search/jpayi-xie-cha-xun-fang-fa.md)
