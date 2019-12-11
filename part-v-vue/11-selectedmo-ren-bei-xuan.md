@@ -8,7 +8,7 @@
 </FormItem>
 ```
 
-```
+```js
 created:function(){
     this.form.type= this.typeList[0].value;
 }
