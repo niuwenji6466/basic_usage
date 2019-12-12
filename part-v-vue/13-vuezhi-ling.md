@@ -11,6 +11,10 @@ data:{
 ```
 
 * 在html中使用 v-for 指令渲染
-* 
+
+```
+<p v-for="(item,i) in list">--索引值--{{i}}   --每一项--{{item}}</p>
+```
+
 
 
