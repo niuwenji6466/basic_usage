@@ -36,5 +36,13 @@ data:{
 
 * 在html中使用 v-for 指令渲染
 
+```
+<p v-for="(user,i) in listObj">--id--{{user.id}}   --姓名--{{user.name}}</p>
+```
+
+# 3.迭代对象
+
+
+
 
 
