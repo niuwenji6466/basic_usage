@@ -29,6 +29,7 @@
   * [1.1 VUE安装](part-v-vue/11-vuean-zhuang.md)
   * [1.2 组件通信的几种方式](part-v-vue/12-zu-jian-tong-xin-de-ji-zhong-fang-shi.md)
   * [1.3 VUE指令](part-v-vue/13-vuezhi-ling.md)
+    * [1.3.1 v-for](part-v-vue/13-vuezhi-ling/131v-for.md)
 * [文章](part-v-vue/wen-zhang.md)
   * [1.1 selected默认备选](part-v-vue/11-selectedmo-ren-bei-xuan.md)
   * [1.2 export default](part-v-vue/12-export-default.md)
