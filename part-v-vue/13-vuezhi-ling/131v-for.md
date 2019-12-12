@@ -45,7 +45,6 @@ data:{
 * 在data中定义对象
 
 ```
-
 data:{
       user:{
         id:1,
